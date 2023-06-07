@@ -17,3 +17,14 @@
     padding: 60px 55px;
     color: #ffffff;
 }
+
+
+
+.location-module__badge {
+    
+    top: 30px;
+    background-color: #05344a;
+    color: #fff;
+    font-weight: 500;
+    font-size: 16px;
+}

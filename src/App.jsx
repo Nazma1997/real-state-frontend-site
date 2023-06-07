@@ -1,4 +1,8 @@
-import TopBar from "./components/navigation/Topbar"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import Home from "./pages/home/Home"
+import Resister from "./components/Resister"
+import Login from "./components/Login"
+
 
 
 
@@ -7,9 +11,13 @@ function App() {
   
 
   return (
-    <>
-      <TopBar />
-    </>
+    <BrowserRouter>
+       <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/register' element={<Resister />} />
+        <Route path='/login' element={<Login />} />
+       </Routes>
+    </BrowserRouter>
   )
 }
 

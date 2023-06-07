@@ -35,7 +35,7 @@ const allLatestProperties = [
   },
 
 ]
-console.log(allLatestProperties?.map(item => item.id))
+// console.log(allLatestProperties?.map(item => item.id))
 const LatestProperties = () => {
   return (
     <div className='lg:max-w-7xl lg:mx-auto px-4 lg:px-8'>

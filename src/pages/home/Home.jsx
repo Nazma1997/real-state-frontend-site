@@ -4,6 +4,7 @@ import NavBar from '../../components/navigation/NavBar'
 import Background from '../../components/navigation/Background'
 import ThirdPart from '../../components/ThirdPart'
 import LatestProperties from '../../components/LatestProperties'
+import Compromise from '../../components/Compromise'
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <Background />
       <ThirdPart />
       <LatestProperties />
+      <Compromise />
     </div>
   )
 }

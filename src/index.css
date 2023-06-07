@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.top-bar-bg{
+  background-color: #05344a;
+}
+.common-color{
+  background: #25a5de;
+}

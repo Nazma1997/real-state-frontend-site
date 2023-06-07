@@ -19,8 +19,9 @@ const TopBar = () => {
          
         </div>
       </div>
-    
+     
     </nav>
+    
   </div>
   )
 }

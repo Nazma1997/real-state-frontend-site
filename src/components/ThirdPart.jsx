@@ -22,7 +22,7 @@ const ThirdPart = () => {
             <img src="https://htmldemo.net/ortiz/ortiz/assets/images/hero/hero-4.jpg" alt="Card Image" className="  h-96 transform transition-transform hover:scale-105 lg:w-full md: w-full" />
             <p className=' text-white py-5 h-16 px-10 mt-5 -ml-4 location-module__badge'>Rent</p>
           </div>
-          <div className="flex mx-2 lg:mt-0 ">
+          <div className="flex mx-2 lg:mt-0 mt-5 ">
             <img src="https://htmldemo.net/ortiz/ortiz/assets/images/hero/hero-4.jpg" alt="Card Image" className="  h-96 transform transition-transform hover:scale-105 lg:w-full md: w-full" />
             <p className=' text-white py-5 h-16 px-10 mt-5 -ml-4 location-module__badge'>Sale</p>
           </div>

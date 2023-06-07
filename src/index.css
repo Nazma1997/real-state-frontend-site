@@ -8,3 +8,12 @@
 .common-color{
   background: #25a5de;
 }
+.background-image {
+  height: 750px;
+}
+
+.hero-content {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 60px 55px;
+    color: #ffffff;
+}

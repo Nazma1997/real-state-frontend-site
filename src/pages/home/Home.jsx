@@ -6,6 +6,7 @@ import ThirdPart from '../../components/ThirdPart'
 import LatestProperties from '../../components/LatestProperties'
 import Compromise from '../../components/Compromise'
 import PropertiesForSale from '../../components/PropertiesForSale'
+import FourthPart from '../../components/FourthPart'
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
       <LatestProperties />
       <Compromise />
       <PropertiesForSale />
+      <FourthPart />
     </div>
   )
 }

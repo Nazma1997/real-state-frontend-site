@@ -44,7 +44,7 @@ const Counter = () => {
     counter3(0, 80000)
   }, []);
   return (
-    <div className={`bg-[url('https://htmldemo.net/ortiz/ortiz/assets/images/bg/counter-bg.jpg')] h-52 lg:mt-32 md:mt-32 mt-24 mb-64 lg:max-w-7xl lg:mx-auto px-4 lg:px-8 md:mx-32 mx-24 `}>
+    <div className={`bg-[url('https://htmldemo.net/ortiz/ortiz/assets/images/bg/counter-bg.jpg')] h-52 lg:mt-32 md:mt-32 mt-24 mb-10 lg:max-w-7xl lg:mx-auto px-4 lg:px-8 md:mx-32 mx-24 `}>
      <div className=''>
      <div className=' grid lg:grid-cols-4 md:grid-cols-2  gap-4  '>
         <div>

@@ -9,6 +9,7 @@ import PropertiesForSale from '../../components/PropertiesForSale'
 import FourthPart from '../../components/FourthPart'
 import Agent from '../../components/Agent'
 import Counter from '../../components/Counter'
+import BlogCard from '../../components/BlogCard'
 
 const Home = () => {
   return (
@@ -23,6 +24,7 @@ const Home = () => {
       <FourthPart />
       <Agent />
       <Counter/>
+      <BlogCard />
     </div>
   )
 }

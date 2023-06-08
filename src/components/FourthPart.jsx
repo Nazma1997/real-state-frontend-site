@@ -20,7 +20,7 @@ const FourthPart = () => {
 
         <div className="  mt-10   w-full">
           <img src='https://htmldemo.net/ortiz/ortiz/assets/images/propertes/property-lg-01.jpg' alt='the' className='h-full w-full' />
-          <h1 className='text-sky-500 -mt-10 text-center text-3xl font-bold '>Call Us 01722438913</h1>
+          <h1 className='text-sky-500 lg:-mt-10 -mt-8 md:-mt-10 text-center lg:text-3xl md:text-3xl text-2xl font-bold '>Call Us 01722438913</h1>
 
         </div>
         

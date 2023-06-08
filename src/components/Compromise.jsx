@@ -46,7 +46,7 @@ const Compromise = () => {
             <SiCoinmarketcap className='text-5xl text-sky-500' />
             <div className='ml-2'>
               <h1 className='text-xl font-semibold'>Best Marketing</h1>
-              <p>Privide low cost that help all <br /> more build real estate</p>
+              <p>Provide low cost that help all <br /> more build real estate</p>
             </div>
             
           </div>

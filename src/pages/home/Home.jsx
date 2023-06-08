@@ -8,6 +8,7 @@ import Compromise from '../../components/Compromise'
 import PropertiesForSale from '../../components/PropertiesForSale'
 import FourthPart from '../../components/FourthPart'
 import Agent from '../../components/Agent'
+import Counter from '../../components/Counter'
 
 const Home = () => {
   return (
@@ -21,6 +22,7 @@ const Home = () => {
       <PropertiesForSale />
       <FourthPart />
       <Agent />
+      <Counter/>
     </div>
   )
 }

@@ -34,7 +34,7 @@ const Agent = () => {
       <div className='p-5 border border-slate-200 rounded-xl w-80 h-82 lg:mx-5 '>
         <div className="relative w-64 h-80 mb-10 border border-slate-200 rounded-xl  mt-8 ">
           <img
-            src="https://htmldemo.net/ortiz/ortiz/assets/images/agents/agents-01.jpg"
+            src="https://htmldemo.net/ortiz/ortiz/assets/images/agents/agents-06.jpg"
             alt="Card Image"
             className="  object-cover "
           />
@@ -54,7 +54,7 @@ const Agent = () => {
       <div className='p-5 border border-slate-200 rounded-xl w-80 h-82 lg:mx-5'>
         <div className="relative w-64 h-80 mb-10 border border-slate-200 rounded-xl  mt-8">
           <img
-            src="https://htmldemo.net/ortiz/ortiz/assets/images/agents/agents-01.jpg"
+            src="https://htmldemo.net/ortiz/ortiz/assets/images/agents/agents-03.jpg"
             alt="Card Image"
             className="  object-cover "
           />
@@ -74,7 +74,7 @@ const Agent = () => {
       <div className='p-5 border border-slate-200 rounded-xl w-80 h-82'>
         <div className="relative w-64 h-80 mb-10 border border-slate-200 rounded-xl lg:ml-3 mt-8">
           <img
-            src="https://htmldemo.net/ortiz/ortiz/assets/images/agents/agents-01.jpg"
+            src="https://htmldemo.net/ortiz/ortiz/assets/images/agents/agents-04.jpg"
             alt="Card Image"
             className="  object-cover "
           />

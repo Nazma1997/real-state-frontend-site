@@ -5,6 +5,7 @@ import TopBar from '../../components/navigation/Topbar'
 import NavBar2 from '../../components/navigation/NavBar2'
 import { AiOutlineDollarCircle, AiOutlineSearch, AiOutlineUnlock } from 'react-icons/ai';
 import { SiCoinmarketcap } from 'react-icons/si';
+import Display from '../../components/Slider';
 
 
 const Services = () => {
@@ -100,6 +101,17 @@ const Services = () => {
           <p className='text-slate-600 text-lg'>We buy various of properties as like various people who want to sale their properites with trust</p>
         </div>
       </div>
+      </div>
+
+      <Display />
+
+      <div className='grid lg:grid-cols-5 md:grid-cols-2  my-12'>
+        <img src='https://htmldemo.net/ortiz/ortiz/assets/images/brand/01.png' alt='the' className='mx-32 lg:mx-0 md:mx-24 mt-10' />
+        <img src='https://htmldemo.net/ortiz/ortiz/assets/images/brand/02.png' alt='the' className='mx-32 lg:mx-0 md:mx-24 mt-10'/>
+        <img src='https://htmldemo.net/ortiz/ortiz/assets/images/brand/03.png' alt='the' className='mx-32 lg:mx-0 md:mx-24 mt-10' />
+        <img src='https://htmldemo.net/ortiz/ortiz/assets/images/brand/04.png' alt='the' className='mx-32 lg:mx-0 md:mx-24 mt-10'/>
+        <img src='https://htmldemo.net/ortiz/ortiz/assets/images/brand/05.png' alt='the' className='mx-32 lg:mx-0 md:mx-24 mt-10'/>
+
       </div>
 
      </div>

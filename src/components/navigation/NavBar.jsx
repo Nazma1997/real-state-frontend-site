@@ -32,7 +32,7 @@ const NavBar = () => {
                   Home
                 </p>
               </Link>
-              <Link to="/login">
+              <Link to="/services">
                 <p className="px-7 py-3 rounded-full text-sky-400 hover:bg-sky-400 font-bold hover:text-black">
                   Services
                 </p>

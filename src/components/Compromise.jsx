@@ -4,7 +4,7 @@ import { SiCoinmarketcap } from 'react-icons/si';
 
 const Compromise = () => {
 
-  const [image, setImage] = useState('https://example.com/image1.jpg');
+  const [image, setImage] = useState('https://htmldemo.net/ortiz/ortiz/assets/images/propertes/01.jpg');
 
   const handleButtonClick = (newImage) => {
     setImage(newImage);
@@ -12,8 +12,8 @@ const Compromise = () => {
   return (
     <div className='lg:flex lg:justify-between lg:max-w-7xl lg:mx-auto px-4 lg:px-8 mt-24 mb-5'>
       <div>
-        <img src={image} alt="Card Image" className="object-cover w-full  transform transition-transform hover:scale-105 ml-10" />
-        <div className=' h-72 bg-slate-100 -mt-52 w-96 '>
+        <img src={image} alt="Card Image" className="object-cover w-11/12  transform transition-transform hover:scale-105 ml-10 " />
+        <div className=' h-72 bg-slate-100 -mt-52 lg:w-80 md:w-11/12 w-11/12'>
           <button onClick={() => handleButtonClick('https://htmldemo.net/ortiz/ortiz/assets/images/about/about-1.jpg')} className="px-4 py-2 mx-2 font-semibold text-sky-500  bg-slate-100 rounded  focus:outline-none mt-56 hover:underline">01</button>
           <button onClick={() => handleButtonClick('https://htmldemo.net/ortiz/ortiz/assets/images/about/about-2.jpg')} className="px-4 py-2 mx-2 font-semibold text-sky-500 bg-slate-100 rounded focus:outline-none hover:underline">02</button>
         </div>

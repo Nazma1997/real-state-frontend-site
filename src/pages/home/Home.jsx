@@ -10,6 +10,7 @@ import FourthPart from '../../components/FourthPart'
 import Agent from '../../components/Agent'
 import Counter from '../../components/Counter'
 import BlogCard from '../../components/BlogCard'
+import Footer from '../../components/Footer'
 
 const Home = () => {
   return (
@@ -17,7 +18,7 @@ const Home = () => {
       <TopBar />
       <NavBar />
       <Background />
-      <ThirdPart />
+      {/* <ThirdPart /> */}
       <LatestProperties />
       <Compromise />
       <PropertiesForSale />
@@ -25,6 +26,7 @@ const Home = () => {
       <Agent />
       <Counter/>
       <BlogCard />
+      <Footer />
     </div>
   )
 }

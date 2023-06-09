@@ -5,12 +5,18 @@ const CardData = () => {
   const rtn = [{
     name:'Lora Momen Smith',
     title: "CEO, Square Groups",
-    desc: <p>Ortiz is one of the most popular real estate company all around USA. You can find your dream property or build property with us.<br /> We always provide importance to our customer.</p>,
+    desc: <p>Ortiz is one of the most popular real estate company all around USA. <br /> You can find your dream property or build property with us.<br /> We always provide importance to our customer.</p>,
     url: "https://htmldemo.net/ortiz/ortiz/assets/images/testimonial/outher-01.jpg"
   }, {
     name:'Morgi Kabir',
     title: "CEO, Square Groups",
-    desc: <p>Ortiz is one of the most popular real estate company all around USA. You can find your dream property or build property with us.<br /> We always provide importance to our customer.</p>,
+    desc: <p>Ortiz is one of the most popular real estate company all around USA. <br /> You can find your dream property or build property with us.<br /> We always provide importance to our customer.</p>,
+    url: "https://htmldemo.net/ortiz/ortiz/assets/images/testimonial/outher-02.jpg"
+  },
+  {
+    name:'Motku Kabir',
+    title: "CEO, Square Groups",
+    desc: <p>Ortiz is one of the most popular real estate company all around USA. <br /> You can find your dream property or build property with us.<br /> We always provide importance to our customer.</p>,
     url: "https://htmldemo.net/ortiz/ortiz/assets/images/testimonial/outher-02.jpg"
   }];
   return rtn;
@@ -23,11 +29,11 @@ const Cards = ({ cardStyle }) => {
       {cardData.map((card, i) => (
         <div className="card" id="card" style={cardStyle} key={i}>
          
-          <img src={card?.url} alt='the' className='ml-24 w-52' />
-          <div className=' h-80 -mt-28 shadow-lg border-2 '>
-            <p className="text-center text-xl font-bold mt-10">{card?.name}</p>
+          <img src={card?.url} alt='the' className='ml-24 lg:w-52 md:44' />
+          <div className=' lg:h-80 md:h-80 h-96 -mt-28 shadow-lg border-2 '>
+            <p className="text-center   text-xl font-bold lg:mt-10 md:mt-10 mt-32">{card?.name}</p>
             <p className="text-center text-lg font-semibold">{card?.title}</p>
-            <p className='mt-10 mx-10 text-lg text-semibold'>{card?.desc}</p>
+            <p className='mt-10 mx-10 text-lg text-semibold max-w-fit	'>{card?.desc}</p>
           </div>
         </div>
       ))}

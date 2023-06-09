@@ -6,16 +6,18 @@ import logo from '../../images/logo2.png';
 const NavBar2 = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-
-
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
+
+
+
 
   return (
     <div className="lg:p-3 md:p-3 pb-8 h-24">
@@ -37,21 +39,20 @@ const NavBar2 = () => {
                   Services
                 </p>
               </Link>
-              <Link to="/register">
+              <Link to="/features">
                 <p className=" lg:px-7 py-3 md:px-7 px-5 rounded-full hover:bg-sky-400 font-bold hover:text-black">
                   Features
                 </p>
               </Link>
-              <Link to="/register">
-                <p className=" lg:px-7 py-3 md:px-7 px-5 rounded-full hover:bg-sky-400 font-bold hover:text-black">
-                  Register
-                </p>
-              </Link>
-              <Link to="/register">
-                <p className=" lg:px-7 py-3 md:px-7 px-5 rounded-full hover:bg-sky-400 font-bold hover:text-black">
+
+
+              <Link to="/properties">
+                <p className=" lg:px-7 py-3 md:px-7 px-5 rounded-full hover:bg-sky-400 font-bold hover:text-black" >
                   Properties
                 </p>
               </Link>
+
+             
               <Link to="/register">
                 <p className=" lg:px-7 py-3 md:px-7 px-5 rounded-full hover:bg-sky-400 font-bold hover:text-black">
                   Pages

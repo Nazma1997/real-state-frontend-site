@@ -7,6 +7,8 @@ import Features from "./pages/features/Features"
 import Properties from "./pages/properties/Properties"
 import PropertiesDetails from "./pages/properties/PropertiesDetails"
 import AddProperty from "./pages/properties/AddProperty"
+import Blog from "./pages/blogs/Blog"
+import BlogDetails from "./pages/blogs/BlogDetails"
 
 
 
@@ -26,6 +28,8 @@ function App() {
         <Route path='/properties' element={<Properties />} />
         <Route path='/properties/:id' element={<PropertiesDetails />} />
         <Route path='/add-property' element={<AddProperty />} />
+        <Route path='/blogs' element={<Blog />} />
+        <Route path='/blogs/:id' element={<BlogDetails/>} />
        </Routes>
     </BrowserRouter>
   )

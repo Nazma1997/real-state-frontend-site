@@ -1,8 +1,12 @@
 import React from 'react'
-import { CiFacebook, CiLinkedin } from 'react-icons/ci';
-import { FaTwitterSquare } from 'react-icons/fa';
-import { CgMail } from 'react-icons/cg';
-import { Link } from 'react-router-dom';
+import TopBar from '../../components/navigation/Topbar'
+import NavBar2 from '../../components/navigation/NavBar2'
+import BottomNavbar from '../../components/navigation/BottomNavbar'
+import { CiFacebook, CiLinkedin } from 'react-icons/ci'
+import { FaTwitterSquare } from 'react-icons/fa'
+import { CgMail } from 'react-icons/cg'
+import { Link } from 'react-router-dom'
+
 
 const allLatestProperties = [
   {
@@ -37,17 +41,18 @@ const allLatestProperties = [
     id: 8,
     title: 'the title'
   },
-]
 
+]
 
 const Agent = () => {
   return (
-    <div className='lg:max-w-7xl lg:mx-auto px-4 lg:px-8 mb-10'>
-      <h1 className='text-center text-4xl font-bold'>Our Agents</h1>
-      <p className='text-center text-xl my-5'>one of the most popular real estate company all around USA. You <br /> can find your dream property or build property with us</p>
+    <>
+    <TopBar />
+    <NavBar2 />
+    <BottomNavbar text={'Agent'}/>
 
-   
-      <div className=' grid lg:grid-cols-4 md:grid-cols-2 gap-4	'>
+    <div className='lg:max-w-7xl lg:mx-auto px-4 lg:px-8 mt-24 mb-5'>
+    <div className=' grid lg:grid-cols-4 md:grid-cols-2 gap-4	'>
 
 {
   allLatestProperties?.map(item => <Link to={`/agents/${item.id}` } key={item.id}>
@@ -77,6 +82,8 @@ const Agent = () => {
     
      </div>
     </div>
+      
+    </>
   )
 }
 

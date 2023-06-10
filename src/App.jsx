@@ -9,6 +9,8 @@ import PropertiesDetails from "./pages/properties/PropertiesDetails"
 import AddProperty from "./pages/properties/AddProperty"
 import Blog from "./pages/blogs/Blog"
 import BlogDetails from "./pages/blogs/BlogDetails"
+import Agent from "./pages/agent/Agent"
+import AgentDetails from "./pages/agent/AgentDetails"
 
 
 
@@ -30,6 +32,8 @@ function App() {
         <Route path='/add-property' element={<AddProperty />} />
         <Route path='/blogs' element={<Blog />} />
         <Route path='/blogs/:id' element={<BlogDetails/>} />
+        <Route path='/agents' element={<Agent />} />
+        <Route path='/agents/:id' element={<AgentDetails />} />
        </Routes>
     </BrowserRouter>
   )

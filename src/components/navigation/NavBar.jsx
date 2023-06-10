@@ -53,7 +53,7 @@ const NavBar = () => {
                   Blogs
                 </p>
               </Link>
-              <Link to="/register">
+              <Link to="/agents">
                 <p className="text-sky-400 lg:px-7 py-3 md:px-7 px-5 rounded-full hover:bg-sky-400 font-bold hover:text-black">
                   Agent
                 </p>

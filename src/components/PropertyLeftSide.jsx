@@ -203,12 +203,12 @@ const PropertyLeftSide = () => {
 
             </div>
 
-            <p className='border-b-2 border-l-2 border-sky-500 text-lg font-semibold mt-10'> <span className='ml-2  '>Tag</span></p>
+            {/* <p className='border-b-2 border-l-2 border-sky-500 text-lg font-semibold mt-10'> <span className='ml-2  '>Tag</span></p>
             <div className='grid lg:grid-cols-3 md:grid-cols-3 mb-5 mt-5 gap-2'>
-              <button className=" border border-sky-500 lg:px-7 py-3 md:px-7 px-5 rounded-full  font-bold text-sky-400 hover:bg-sky-400 hover:text-white  ">
+              <button className=" border border-sky-500 lg:px-6 py-3 md:px-7 px-5 rounded-full  font-bold text-sky-400 hover:bg-sky-400 hover:text-white  ">
                 Real State
               </button>
-              <button className="text-sky-400 border border-sky-500 lg:px-7 py-3 md:px-7 px-5 rounded-full hover:bg-sky-400 font-bold hover:text-white mx-3">
+              <button className="text-sky-400 border border-sky-500 lg:px-9 py-3 md:px-7 px-5 rounded-full hover:bg-sky-400 font-bold hover:text-white mx-3">
                 Home
               </button>
               <button className="text-sky-400 border border-sky-500 lg:px-7 py-3 md:px-7 px-5 rounded-full hover:bg-sky-400 font-bold hover:text-white">
@@ -223,7 +223,7 @@ const PropertyLeftSide = () => {
               <button className="text-sky-400 border border-sky-500 lg:px-7 py-3 md:px-7 px-5 rounded-full hover:bg-sky-400 font-bold hover:text-white ml-3">
                 Property
               </button>
-            </div>
+            </div> */}
 
 
           </div>

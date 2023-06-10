@@ -1,9 +1,30 @@
 import React from 'react'
+import { useEffect } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom'
 const TopBar = () => {
+
+  const [isNavbarFixed, setIsNavbarFixed] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 0;
+      setIsNavbarFixed(isScrolled);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const navbarClasses = isNavbarFixed
+    ? 'fixed top-0 left-0 w-full top-bar-bg z-10' // Fixed navbar styles
+    : 'relative'; // Default navbar styles
   return (
     <div className=" lg:p-3 md:p-3 pb-8 top-bar-bg">
-      <nav >
+      <nav className={navbarClasses} >
         <div className="lg:max-w-7xl lg:mx-auto px-4  lg:px-8">
           <div className="lg:flex md:flex lg:justify-between md:justify-between h-16">
             <h1 className='text-white font-semibold text-center	lg:my-6 md:my-6' >Call us - 21548 987 658</h1>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BsSearch, BsX } from 'react-icons/bs';
 import logo from '../../images/logo.png';
+import { useEffect } from 'react';
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,9 +18,28 @@ const NavBar = () => {
     setIsModalOpen(!isModalOpen);
   };
 
+  const [isNavbarFixed, setIsNavbarFixed] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 0;
+      setIsNavbarFixed(isScrolled);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const navbarClasses = isNavbarFixed
+    ? 'fixed top-0 left-0 w-full top-bar-bg z-10' // Fixed navbar styles
+    : 'relative'; // Default navbar styles
+
   return (
     <div className="lg:p-3 md:p-3 pb-8 top-bar-bg">
-      <nav>
+      <nav className={navbarClasses}>
         <div className="lg:max-w-7xl lg:mx-auto px-4 lg:px-8">
           <div className="flex justify-between h-16">
             <img src={logo} className="top-bar-bg font-bold h-12 " />

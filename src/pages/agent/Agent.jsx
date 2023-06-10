@@ -6,6 +6,7 @@ import { CiFacebook, CiLinkedin } from 'react-icons/ci'
 import { FaTwitterSquare } from 'react-icons/fa'
 import { CgMail } from 'react-icons/cg'
 import { Link } from 'react-router-dom'
+import Footer from '../../components/Footer'
 
 
 const allLatestProperties = [
@@ -82,6 +83,7 @@ const Agent = () => {
     
      </div>
     </div>
+    <Footer />
       
     </>
   )

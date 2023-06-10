@@ -31,7 +31,7 @@ const allLatestProperties = [
 ]
 const BlogLeftSide = () => {
   return (
-    <div className='lg:mx-5'>
+    <div className='lg:mx-5 mt-5'>
     <p className='border-b-2 border-l-2 border-sky-500 text-lg font-semibold '> <span className='ml-2  '>Search Here</span></p>
     <input className='outline-none border border-sky-500 pr-24 h-12 mt-10 px-5 text-slate-800 rounded-3xl' placeholder='Enter your title here' />
     <p className='border-b-2 border-l-2 border-sky-500 text-lg font-semibold my-10 '> <span className='ml-2  '>Category</span></p>
@@ -58,7 +58,7 @@ const BlogLeftSide = () => {
 
     {
       allLatestProperties?.slice(0, 3)?.map(item =>
-        <Link to={`/properties/${item.id}`} key={item?.id} >
+        <Link to={`/blogs/${item.id}`} key={item?.id} >
           <div className='flex mt-5'>
             <img src={test} alt='the' className='w-28 h-20 my-3 transform transition-transform hover:scale-105 rounded-xl' />
             <div className='ml-2'>

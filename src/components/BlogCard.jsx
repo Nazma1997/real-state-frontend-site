@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const allLatestProperties = [
   {
@@ -28,7 +29,8 @@ const BlogCard = () => {
   allLatestProperties?.map(item =>
 
 
-    <div className="relative max-w-md mx-auto overflow-hidden bg-white rounded-lg shadow-2xl hover:shadow-xl p-10 border border-slate-300" key={item?.id}>
+   <Link to={`/blogs/${item.id}`} key={item?.id} >
+     <div className="relative max-w-md mx-auto overflow-hidden bg-white rounded-lg shadow-2xl hover:shadow-xl p-10 border border-slate-300" >
       <div className="bg-[url('https://htmldemo.net/ortiz/ortiz/assets/images/hero/hero-4.jpg')] bg-cover bg-center h-64  w-full"></div>
       <div className="">
         <h1 className="text-2xl font-semibold  pt-2   hover:text-blue-800 ml-7">Desilva De Villa</h1>
@@ -41,6 +43,7 @@ const BlogCard = () => {
         <p className='ml-7 text-sky-500 font-bold hover:underline'>See More</p>
       </div>
     </div>
+   </Link>
 
   )
 }

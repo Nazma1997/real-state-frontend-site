@@ -6,6 +6,7 @@ import Services from "./pages/services/Services"
 import Features from "./pages/features/Features"
 import Properties from "./pages/properties/Properties"
 import PropertiesDetails from "./pages/properties/PropertiesDetails"
+import AddProperty from "./pages/properties/AddProperty"
 
 
 
@@ -24,6 +25,7 @@ function App() {
         <Route path='/features' element={<Features />} />
         <Route path='/properties' element={<Properties />} />
         <Route path='/properties/:id' element={<PropertiesDetails />} />
+        <Route path='/add-property' element={<AddProperty />} />
        </Routes>
     </BrowserRouter>
   )

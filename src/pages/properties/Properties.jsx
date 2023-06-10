@@ -8,6 +8,7 @@ import { CiFacebook, CiLinkedin } from 'react-icons/ci';
 import { FaTwitterSquare } from 'react-icons/fa';
 import { CgMail } from 'react-icons/cg';
 import PropertyLeftSide from '../../components/PropertyLeftSide';
+import { Link } from 'react-router-dom';
 
 
 
@@ -72,7 +73,8 @@ const Properties = () => {
                 allLatestProperties?.map(item =>
 
 
-                  <div className="relative max-w-md mx-auto overflow-hidden bg-white rounded-lg shadow-2xl hover:shadow-xl " key={item?.id}>
+                  <Link to={`/properties/${item?.id}`}  key={item?.id}>
+                    <div className="relative max-w-md mx-auto overflow-hidden bg-white rounded-lg shadow-2xl hover:shadow-xl " key={item?.id}>
                     <div className="bg-[url('https://htmldemo.net/ortiz/ortiz/assets/images/hero/hero-4.jpg')] bg-cover bg-center h-64 transform transition-transform hover:scale-105"></div>
                     <div className="">
                       <h1 className="text-2xl font-semibold bg-sky-500 py-4 text-center text-white hover:text-blue-800">Desilva De Villa</h1>
@@ -83,6 +85,7 @@ const Properties = () => {
                       </div>
                     </div>
                   </div>
+                  </Link>
 
                 )
               }

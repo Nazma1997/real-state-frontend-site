@@ -5,6 +5,7 @@ import Login from "./components/Login"
 import Services from "./pages/services/Services"
 import Features from "./pages/features/Features"
 import Properties from "./pages/properties/Properties"
+import PropertiesDetails from "./pages/properties/PropertiesDetails"
 
 
 
@@ -22,6 +23,7 @@ function App() {
         <Route path='/services' element={<Services />} />
         <Route path='/features' element={<Features />} />
         <Route path='/properties' element={<Properties />} />
+        <Route path='/properties/:id' element={<PropertiesDetails />} />
        </Routes>
     </BrowserRouter>
   )

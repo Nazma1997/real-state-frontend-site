@@ -2,6 +2,7 @@ import React from 'react'
 import { BsTelephone } from 'react-icons/bs';
 import { FaTelegramPlane } from 'react-icons/fa';
 import { MdOutlineEmail, MdPlace } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -13,7 +14,7 @@ const Footer = () => {
               <h1 className='text-xl font-bold text-white'>About</h1>
               <p className='text-white font-bold mt-12'>Ortiz is the best and popular real estate to you  <br /> how all this  mistaolt cing pleasure and praising <br />  ained wasnad pain was prexplain</p>
               <div className='flex mb-10 '>
-                <input className='border border-1 border-white outline-none lg:px-4 px-10 py-5 mt-5 top-bar-bg text-white text-xl font-bold' placeholder='Email For Newsletter' />
+                <input className='border border-1 border-white outline-none lg:px-4 px-8 py-5 mt-5 top-bar-bg text-white text-xl font-bold' placeholder='Email For Newsletter' />
                 <FaTelegramPlane className='mt-10 text-3xl text-white -ml-12' />
               </div>
             </div>
@@ -27,12 +28,12 @@ const Footer = () => {
             </div>
             <div className='ml-10'>
               <h1 className='text-xl font-bold text-white'>Quick Link</h1>
-              <p className='text-white font-semibold mt-3'>Services</p>
-              <p className='text-white font-semibold mt-3'>Agent</p>
-              <p className='text-white font-semibold mt-3'>Properties</p>
-              <p className='text-white font-semibold mt-3'>Features</p>
-              <p className='text-white font-semibold mt-3'>Blog</p>
-              <p className='text-white font-semibold mt-3'>Contract</p>
+              <Link to='/services'> <p className='text-white font-semibold mt-3'>Services</p></Link>
+              <Link to='/agents'><p className='text-white font-semibold mt-3'>Agent</p></Link>
+              <Link to='/properties'> <p className='text-white font-semibold mt-3'>Properties</p></Link>
+              <Link to='/features'><p className='text-white font-semibold mt-3'>Features</p></Link>
+              <Link to='/blogs'>  <p className='text-white font-semibold mt-3'>Blog</p></Link>
+              <Link to='/contract'> <p className='text-white font-semibold mt-3'>Contract</p></Link>
 
             </div>
             <div>

@@ -11,6 +11,7 @@ import Blog from "./pages/blogs/Blog"
 import BlogDetails from "./pages/blogs/BlogDetails"
 import Agent from "./pages/agent/Agent"
 import AgentDetails from "./pages/agent/AgentDetails"
+import Contract from "./pages/contract/Contract"
 
 
 
@@ -34,6 +35,7 @@ function App() {
         <Route path='/blogs/:id' element={<BlogDetails/>} />
         <Route path='/agents' element={<Agent />} />
         <Route path='/agents/:id' element={<AgentDetails />} />
+        <Route path='/contract' element={<Contract />} />
        </Routes>
     </BrowserRouter>
   )

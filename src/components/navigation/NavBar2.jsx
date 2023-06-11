@@ -81,7 +81,7 @@ const NavBar2 = () => {
                   Agent
                 </p>
               </Link>
-              <Link to="/register">
+              <Link to="/contract">
                 <p className=" lg:px-7 py-3 md:px-7 px-5 rounded-full hover:bg-sky-400   font-bold hover:text-black">
                   Contract
                 </p>

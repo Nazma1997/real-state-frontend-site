@@ -5,6 +5,7 @@ import BottomNavbar from '../../components/navigation/BottomNavbar'
 import { Link } from 'react-router-dom'
 import test from '../../images/test.png'
 import BlogLeftSide from '../../components/BlogLeftSide'
+import Footer from '../../components/Footer'
 
 
 const allLatestProperties = [
@@ -85,6 +86,7 @@ const Blog = () => {
         </div>
 
       </div>
+      <Footer />
     </div>
   )
 }

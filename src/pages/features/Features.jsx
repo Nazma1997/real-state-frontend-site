@@ -60,7 +60,7 @@ const Features = () => {
                 </div>
 
               </div>
-              <div className='flex'>
+              <div className='flex '>
                 <BsShieldLockFill className='text-5xl text-sky-500' />
                 <div className='ml-2'>
                   <h1 className='text-xl font-semibold'>Non stop security</h1>

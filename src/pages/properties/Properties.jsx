@@ -9,7 +9,7 @@ import { FaTwitterSquare } from 'react-icons/fa';
 import { CgMail } from 'react-icons/cg';
 import PropertyLeftSide from '../../components/PropertyLeftSide';
 import { Link } from 'react-router-dom';
-
+import test from '../../images/test.png'
 
 
 const allLatestProperties = [
@@ -74,17 +74,16 @@ const Properties = () => {
 
 
                   <Link to={`/properties/${item?.id}`} key={item?.id}>
-                    <div className="relative max-w-md mx-auto overflow-hidden bg-white rounded-lg shadow-2xl hover:shadow-xl " key={item?.id}>
-                      <div className="bg-[url('https://htmldemo.net/ortiz/ortiz/assets/images/hero/hero-4.jpg')] bg-cover bg-center h-64 transform transition-transform hover:scale-105"></div>
-                      <div className="">
+                    <div className='bg-slate-100 pb-5 rounded-2xl '>
+                      <img src={test} alt='the' className='rounded-t-2xl transform transition-transform hover:scale-105' />
+                      <div className=' shadow-slate-700	'>
                         <h1 className="text-2xl font-semibold bg-sky-500 py-4 text-center text-white hover:text-blue-800">Desilva De Villa</h1>
-                        <div className='p-6 md:p-8'>
-                          <h3 className="text-slate-500 ">24 North Street, California, USA</h3>
-                          <p className=" text-slate-500">3520 sqft, 5 Bed, 3 Bath, 2 Garage</p>
-                          <h2 className="text-xl font-semibold mt-4 text-center text-slate-500">Price : $54,000</h2>
-                        </div>
+                        <h3 className="text-slate-500 mx-2 mt-2">24 North Street, California, USA</h3>
+                        <p className=" text-slate-500 mx-2 mt-2">3520 sqft, 5 Bed, 3 Bath, 2 Garage</p>
+                        <h2 className="text-xl font-semibold mt-4 text-center text-slate-500">Price : $54,000</h2>
                       </div>
                     </div>
+
                   </Link>
 
                 )
@@ -103,7 +102,7 @@ const Properties = () => {
           <div>
             <PropertyLeftSide />
 
-           
+
           </div>
 
 

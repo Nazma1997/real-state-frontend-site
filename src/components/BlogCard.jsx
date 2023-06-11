@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+import test from '../images/test.png'
 const allLatestProperties = [
   {
     id: 1,
@@ -29,21 +29,18 @@ const BlogCard = () => {
   allLatestProperties?.map(item =>
 
 
-   <Link to={`/blogs/${item.id}`} key={item?.id} >
-     <div className="relative max-w-md mx-auto overflow-hidden bg-white rounded-lg shadow-2xl hover:shadow-xl p-10 border border-slate-300" >
-      <div className="bg-[url('https://htmldemo.net/ortiz/ortiz/assets/images/hero/hero-4.jpg')] bg-cover bg-center h-64  w-full"></div>
-      <div className="">
-        <h1 className="text-2xl font-semibold  pt-2   hover:text-blue-800 ml-7">Desilva De Villa</h1>
-        <p className='ml-7'>5th may , 2023</p>
-        <div className='px-6 pb-6 pt-3 md:p-8'>
-          <p>Real estate festival is one of the famous feval for explain to you how all this mistaolt deand praising pain wasnad I will give complete</p>
-
-          
-        </div>
-        <p className='ml-7 text-sky-500 font-bold hover:underline'>See More</p>
+    <Link to={`/blogs/${item.id}`} key={item.id}>
+    <div className='bg-slate-100 pb-5 rounded-2xl '>
+      <img src={test} alt='the' className='rounded-t-2xl transform transition-transform hover:scale-105' />
+      <div className='mx-5 shadow-slate-700	'>
+        <h1 className='text-xl font-semibold my-5 mx-2 hover:text-sky-500'>Duplex Appartment Latest Design</h1>
+        <p className='mx-2 '>May 10, 2023 / 10 pm</p>
+        <p className='mx-2'>Real estate festival is one of the famous feval for explain to you how all this mistaolt deand praising pain wasnad I will give complete</p>
+        <p className='mx-2 text-sky-500 '>Read More</p>
       </div>
     </div>
-   </Link>
+
+  </Link>
 
   )
 }

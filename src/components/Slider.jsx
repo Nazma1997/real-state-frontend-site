@@ -6,18 +6,20 @@ const CardData = () => {
     name:'Lora Momen Smith',
     title: "CEO, Square Groups",
     desc: <p>Ortiz is one of the most popular real estate company all around USA. <br /> You can find your dream property or build property with us.<br /> We always provide importance to our customer.</p>,
-    short:<p>Ortiz is one of the most popular real estate company all around USA. </p>,
+    short:<p>Ortiz is one of the most popular <br />  real estatecompany all around <br />  USA. </p>,
     url: "https://htmldemo.net/ortiz/ortiz/assets/images/testimonial/outher-01.jpg"
   }, {
     name:'Morgi Kabir',
     title: "CEO, Square Groups",
     desc: <p>Ortiz is one of the most popular real estate company all around USA. <br /> You can find your dream property or build property with us.<br /> We always provide importance to our customer.</p>,
+    short:<p>Ortiz is one of the most popular <br />  real estatecompany all around <br />  USA. </p>,
     url: "https://htmldemo.net/ortiz/ortiz/assets/images/testimonial/outher-02.jpg"
   },
   {
     name:'Motku Kabir',
     title: "CEO, Square Groups",
     desc: <p>Ortiz is one of the most popular real estate company all around USA. <br /> You can find your dream property or build property with us.<br /> We always provide importance to our customer.</p>,
+    short:<p>Ortiz is one of the most popular <br />  real estatecompany all around <br />  USA. </p>,
     url: "https://htmldemo.net/ortiz/ortiz/assets/images/testimonial/outher-02.jpg"
   }];
   return rtn;

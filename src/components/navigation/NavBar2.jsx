@@ -33,7 +33,7 @@ const NavBar2 = () => {
   }, []);
 
   const navbarClasses = isNavbarFixed
-    ? 'fixed top-0 left-0 w-full top-bar-bg text-sky-500 z-10' // Fixed navbar styles
+    ? 'fixed top-0 left-0 w-full  text-sky-500 z-10' // Fixed navbar styles
     : 'relative'; // Default navbar styles
 
 

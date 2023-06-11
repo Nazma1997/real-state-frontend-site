@@ -21,7 +21,7 @@ const Contract = () => {
               
               <div className='flex mt-5'>
                 <MdPlace className='text-4xl text-sky-500 mt-3 mr-2' />
-                <p className='text-sky-500'>256, 1st AVE, Manchester <br /> 125 , Noth England</p>
+                <p className=''>256, 1st AVE, Manchester <br /> 125 , Noth England</p>
               </div>
               <hr className='my-5'/>
               <div className='flex mt-5'>

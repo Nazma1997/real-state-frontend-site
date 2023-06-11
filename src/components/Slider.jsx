@@ -6,6 +6,7 @@ const CardData = () => {
     name:'Lora Momen Smith',
     title: "CEO, Square Groups",
     desc: <p>Ortiz is one of the most popular real estate company all around USA. <br /> You can find your dream property or build property with us.<br /> We always provide importance to our customer.</p>,
+    short:<p>Ortiz is one of the most popular real estate company all around USA. </p>,
     url: "https://htmldemo.net/ortiz/ortiz/assets/images/testimonial/outher-01.jpg"
   }, {
     name:'Morgi Kabir',
@@ -33,7 +34,9 @@ const Cards = ({ cardStyle }) => {
           <div className=' lg:h-80 md:h-80 h-96 -mt-28 shadow-lg border-2 '>
             <p className="text-center   text-xl font-bold lg:mt-10 md:mt-10 mt-32">{card?.name}</p>
             <p className="text-center text-lg font-semibold">{card?.title}</p>
-            <p className='mt-10 mx-10 text-lg text-semibold max-w-fit	'>{card?.desc}</p>
+            <p className='mt-10 mx-10 text-lg text-semibold max-w-fit content-hide lg:text-center	'>{card?.desc}</p>
+            <p className='mt-10 mx-10 text-lg text-semibold max-w-fit content-show  lg:text-center	'>{card?.short}</p>
+            
           </div>
         </div>
       ))}

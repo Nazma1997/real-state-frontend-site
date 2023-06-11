@@ -41,7 +41,7 @@ const LatestProperties = () => {
   return (
     <div className='lg:max-w-7xl lg:mx-auto px-4 lg:px-8'>
       <h1 className='my-10 text-4xl font-semibold '>Latest Properties</h1>
-      <div className='grid lg:grid-cols-4 md:grid-cols-2 gap-5 md:gap-4 ' >
+      <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-5 md:gap-4 ' >
 
         {
           allLatestProperties?.map(item =>

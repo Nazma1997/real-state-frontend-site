@@ -4,6 +4,7 @@ import TopBar from '../../components/navigation/Topbar';
 import NavBar2 from '../../components/navigation/NavBar2';
 import BottomNavbar from '../../components/navigation/BottomNavbar';
 import Footer from '../../components/Footer'
+import videoTest from '../../images/test-video.mp4'
 
 const PropertiesDetails = () => {
   return (
@@ -74,9 +75,9 @@ const PropertiesDetails = () => {
                 <p className='text-xl  text-black '>Take a video tour</p>
                 <hr className='bg-slate-500 h-0.5  w-7/12 mb-10' />
                
-                <video width="320" height="250" controls>
+                <video width="320" height="220" controls>
                   <source src="https://htmldemo.net/ortiz/ortiz/assets/images/hero/hero-4.jpg" type="video/mp4"/>
-                    <source src="" type="video/ogg"/>
+                    <source src={videoTest} type="video/ogg" />
                       Your browser does not support the video tag.
                     </video>
                   </div>

@@ -41,7 +41,7 @@ const PropertiesForSale = () => {
   return (
     <div className='lg:max-w-7xl lg:mx-auto px-4 lg:px-8'>
       <h1 className='my-10 text-4xl font-semibold '>Property for Sale / <span className='text-slate-500'> Property for Rent</span></h1>
-      <div className='grid lg:grid-cols-4 md:grid-cols-2 gap-5 md:gap-4 ' >
+      <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-5 md:gap-4 ' >
 
         {
           allLatestProperties?.map(item =>

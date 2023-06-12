@@ -1,27 +1,10 @@
 import React from 'react'
-import { useEffect } from 'react';
-import { useState } from 'react';
 import { Link } from 'react-router-dom'
+
+
 const TopBar = () => {
 
-  // const [isNavbarFixed, setIsNavbarFixed] = useState(false);
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const isScrolled = window.scrollY > 0;
-  //     setIsNavbarFixed(isScrolled);
-  //   };
-
-  //   window.addEventListener('scroll', handleScroll);
-
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll);
-  //   };
-  // }, []);
-
-  // const navbarClasses = isNavbarFixed
-  //   ? 'fixed top-0 left-0 w-full top-bar-bg z-10' 
-  //   : 'relative'; 
+  const user = localStorage.getItem('email')
   return (
     <div className=" lg:p-3 md:p-3 pb-8 top-bar-bg">
       <nav  >
@@ -29,9 +12,11 @@ const TopBar = () => {
           <div className="lg:flex md:flex lg:justify-between md:justify-between h-16">
             <h1 className='text-white font-semibold text-center	lg:my-6 md:my-6' >Call us - 21548 987 658</h1>
             <div className='flex lg:my-2 md:my-2 mt-2'>
-              <Link to='/add-property' >
+              {
+                user && <Link to='/add-property' >
                 <button className='text-white bg-sky-400 px-7 lg:py-2 py-0.5 md:py-2  rounded-full hover:bg-black	lg:font-semibold md:font-semibold 	'>Add Property</button>
               </Link>
+              }
 
               <Link to='/register'>
                 <p className='text-sky-400  lg:px-7 py-3 md:px-7 px-5 rounded-full hover:bg-sky-400	font-semibold lg:mx-1 md:mx-1 mx-2 hover:text-black	'>Register</p>

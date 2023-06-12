@@ -16,7 +16,7 @@ const LatestProperties = () => {
           allProperties?.slice(0,3)?.map(item =>
 
 
-          <Link to={`/properties/${item.id}`} key={item.id}>
+          <Link to={`/properties/${item?._id}`} key={item.id}>
               <div className="relative max-w-md mx-auto overflow-hidden bg-white rounded-lg shadow-2xl hover:shadow-xl " key={item?.id}>
               {/* <div className={`bg-[url(${item?.image})] bg-cover bg-center h-64 transform transition-transform hover:scale-105`}></div> */}
               <img src={item?.image} alt='the' className='rounded-t-2xl transform transition-transform hover:scale-105 h-72 ' />

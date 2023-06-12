@@ -30,6 +30,14 @@ export const serverApi = createApi({
       }),
       invalidatesTags: ['User']
     }),
+    logedUser: builder.mutation({
+      query: (data) => ({
+        url: `/users/login`,
+        method: 'POST',
+        body: data
+      }),
+      invalidatesTags: ['User']
+    }),
 
     deleteProperties: builder.mutation({
         query:(id) => ({
@@ -56,6 +64,6 @@ export const serverApi = createApi({
 // })
 
 
-export const {useGetPropertiesQuery, useCreatePropertiesMutation, useCreateUserMutation, useUpdatePropertiesMutation,useDeletePropertiesMutation } = serverApi
+export const {useGetPropertiesQuery, useCreatePropertiesMutation, useCreateUserMutation, useLogedUserMutation, useUpdatePropertiesMutation,useDeletePropertiesMutation } = serverApi
 
 

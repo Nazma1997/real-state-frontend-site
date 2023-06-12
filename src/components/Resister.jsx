@@ -5,15 +5,15 @@ import BottomNavbar from './navigation/BottomNavbar';
 import Footer from '../components/Footer'
 import TopBar from './navigation/Topbar'
 import NavBar2 from './navigation/NavBar2'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserMutation } from '../redux/apiSlice';
 import { toast } from 'react-toastify';
 
 const Resister = () => {
 
   const [createUser] = useCreateUserMutation();
-
   const [formData, setFormData] = useState({ fName: '', lName: '', password: '', email: '' });
+  const navigate = useNavigate();
 
   const submitUser = (event) => {
     event.preventDefault();
@@ -34,6 +34,7 @@ const Resister = () => {
 
     // Clear the form
     setFormData({ fName: '', lName: '', password: '', email: '' });
+    navigate('/login')
   };
 
   const handleChange = (event) => {

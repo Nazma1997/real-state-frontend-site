@@ -22,22 +22,7 @@ export const serverApi = createApi({
       }),
       invalidatesTags: ['Properties']
     }),
-    createUser: builder.mutation({
-      query: (data) => ({
-        url: `/users`,
-        method: 'POST',
-        body: data
-      }),
-      invalidatesTags: ['User']
-    }),
-    logedUser: builder.mutation({
-      query: (data) => ({
-        url: `/users/login`,
-        method: 'POST',
-        body: data
-      }),
-      invalidatesTags: ['User']
-    }),
+   
 
     deleteProperties: builder.mutation({
         query:(id) => ({
@@ -58,12 +43,34 @@ export const serverApi = createApi({
 
       invalidatesTags: ['Properties']
     }),
+
+    //User Slice 
+    createUser: builder.mutation({
+      query: (data) => ({
+        url: `/users`,
+        method: 'POST',
+        body: data
+      }),
+      invalidatesTags: ['User']
+    }),
+    logedUser: builder.mutation({
+      query: (data) => ({
+        url: `/users/login`,
+        method: 'POST',
+        body: data
+      }),
+      invalidatesTags: ['User']
+    }),
+    getAllUsers: builder.query({
+      query: () => `/users`,
+      providesTags: ['Properties'],
+    }),
   
   }),
 })
 // })
 
 
-export const {useGetPropertiesQuery, useCreatePropertiesMutation, useCreateUserMutation, useLogedUserMutation, useUpdatePropertiesMutation,useDeletePropertiesMutation } = serverApi
+export const {useGetPropertiesQuery, useGetAllUsersQuery, useCreatePropertiesMutation, useCreateUserMutation, useLogedUserMutation, useUpdatePropertiesMutation,useDeletePropertiesMutation } = serverApi
 
 

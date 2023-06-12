@@ -23,7 +23,8 @@ const Login = () => {
       return;
     }
     logedUser(formData);
-    toast.success('Login Successfully')
+    toast.success('Login Successfully');
+    localStorage.setItem('email', formData.email)
     setFormData({email:'', password:''})
     navigate('/')
   }

@@ -13,16 +13,45 @@ import { useGetPropertiesQuery } from '../../redux/apiSlice';
 const Properties = () => {
   const { data: allProperties } = useGetPropertiesQuery();
   const [selectedItem, setSelectedItem] = useState(null);
-
+  const [showAll, setShowAll] = useState(false);
+  
+  // Filter item
   const handleClick = (type) => {
     const item = allProperties?.filter((item) => item.type === type);
     setSelectedItem(item);
+    setShowAll(false);
   };
-
+  
   const handleShowAll = () => {
     setSelectedItem(null);
+    setShowAll(true);
   };
-
+  
+  // Pagination
+  const itemsPerPage = 2;
+  const [currentPage, setCurrentPage] = useState(1);
+  
+  const totalItems = showAll ? allProperties?.length : selectedItem?.length;
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
+  const isLastPage = currentPage === totalPages;
+  
+  // Function to handle page change
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
+  
+  const handlePreviousPage = () => {
+    setCurrentPage((prevPage) => prevPage - 1);
+  };
+  
+  const handleNextPage = () => {
+    setCurrentPage((prevPage) => prevPage + 1);
+  };
+  
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  
+  const displayedItems = showAll ? allProperties?.slice(startIndex, endIndex) : selectedItem?.slice(startIndex, endIndex);
   return (
     <div>
       <TopBar />
@@ -50,7 +79,7 @@ const Properties = () => {
             {selectedItem ? (
               <div className='grid lg:grid-cols-2 md:grid-cols-2 gap-5 md:gap-4 mb-auto'>
                 {
-                  selectedItem?.map(item =>
+                  displayedItems?.map(item =>
 
                     <div key={item.id} >
                       <Link to={`/properties/${item?._id}`} >
@@ -84,7 +113,7 @@ const Properties = () => {
             ) : (
               <div className='grid lg:grid-cols-2 md:grid-cols-2 gap-5 md:gap-4 mb-auto'>
                 {
-                  allProperties?.map(item =>
+                  displayedItems?.map(item =>
 
 
                     <div key={item.id} >
@@ -120,13 +149,44 @@ const Properties = () => {
             )}
             {/* </div> */}
 
-            <div className='flex mt-10 justify-center'>
+            {/* <div className='flex mt-10 justify-center'>
               <p className='px-6 py-5 rounded-full hover:bg-sky-500 border border-sky-500 hover:text-white text-sky-500 font-semibold'>01</p>
               <p className='px-6 py-5 ml-1 rounded-full hover:bg-sky-500 border border-sky-500 hover:text-white text-sky-500 font-semibold'>02</p>
               <p className='px-6 py-5 ml-1 rounded-full hover:bg-sky-500 border border-sky-500 hover:text-white text-sky-500 font-semibold'>03</p>
               <p className='px-6 py-5 ml-1 rounded-full hover:bg-sky-500 border border-sky-500 hover:text-white text-sky-500 font-semibold'>04</p>
 
-            </div>
+            </div> */}
+
+<div className='flex justify-center mb-10'>
+        <button
+          disabled={currentPage === 1}
+          onClick={handlePreviousPage}
+          className='bg-slate-800 text-white px-10 py-3 rounded-2xl shadow-lg text-xl font-bold'
+        >
+          Previous
+        </button>
+
+        {Array.from({ length: totalPages }, (_, index) => (
+          <button
+            key={index + 1}
+            onClick={() => handlePageChange(index + 1)}
+            className={currentPage === index + 1 ? 'active' : ''}
+            className='text-2xl mx-5 text-white font-bold'
+            
+          >
+            {index + 1}
+          </button>
+        ))}
+
+        <button
+          disabled={currentPage === totalPages}
+          // disabled={isLastPage || endIndex >= totalItems}
+          onClick={handleNextPage}
+          className='bg-slate-800 text-white px-10 py-3 rounded-2xl shadow-lg text-xl font-bold'
+        >
+          Next
+        </button>
+      </div>
           </div>
 
           <div>

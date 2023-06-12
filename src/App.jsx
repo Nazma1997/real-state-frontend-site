@@ -17,10 +17,12 @@ import Contract from "./pages/contract/Contract"
 
 
 
+
 function App() {
   
 
   return (
+   <>
     <BrowserRouter>
        <Routes>
         <Route path='/' element={<Home />} />
@@ -38,6 +40,8 @@ function App() {
         <Route path='/contract' element={<Contract />} />
        </Routes>
     </BrowserRouter>
+  
+   </>
   )
 }
 

@@ -27,8 +27,8 @@ const AddProperty = () => {
   const [formData, setFormData] = useState({ title: '', price: '', text: '', location: '', subLocation: '', type: '', status: '', bedroom: '', bathroom: '', garage: '', area: '', kitchen: '', livingRoom: '', video: '', image: productImage, userId: userId });
   const apiKey = '837d05f4d0c9787e5980a5a7fe323afd';
 
- 
- console.log(formData)
+
+  console.log(formData)
   const formSubmit = async (event) => {
     event.preventDefault();
 
@@ -37,7 +37,7 @@ const AddProperty = () => {
       formData.price === '' ||
       formData.text === '' ||
       formData.location === '' ||
-      formData.subLocation === ''||
+      formData.subLocation === '' ||
       formData.type === '' ||
       formData.status === '' ||
       formData.bedroom === '' ||
@@ -62,7 +62,7 @@ const AddProperty = () => {
       const imgbbResponse = await axios.post(url, imageFormData);
       const image = imgbbResponse.data.data.url;
 
-      
+
       await axios.post('http://localhost:5000/api/v1/properties', {
         ...formData,
         image
@@ -115,17 +115,17 @@ const AddProperty = () => {
           <h1 className='text-xl my-5 font-bold'>Basic Information</h1>
           <div className='grid lg:grid-cols-2 md:grid-cols-2'>
             <div>
-              <h1 className='text-lg font-semibold'>Property Title</h1>
+              <h1 className='text-lg font-semibold'>Property Title <span className='text-red-500'>*</span></h1>
               <input className='outline-none border border-slate-300 w-11/12 h-12 mt-5 px-5 text-slate-800 rounded-2xl' placeholder='Enter your title here' name='title' value={formData.title}
-                onChange={handleChange} />
+                onChange={handleChange} required />
             </div>
             <div>
-              <h1 className='text-lg font-semibold'>Price</h1>
+              <h1 className='text-lg font-semibold'>Price <span className='text-red-500'>*</span></h1>
               <input className='outline-none border border-slate-300 w-8/12 h-12 mt-5 px-5 text-slate-800 rounded-2xl' placeholder='Price $' name='price' value={formData.price}
                 onChange={handleChange} />
             </div>
           </div>
-          <h1 className='text-lg font-semibold mt-5'>Property Text</h1>
+          <h1 className='text-lg font-semibold mt-5'>Property Text <span className='text-red-500'>*</span></h1>
           <textarea className='outline-none border border-slate-300 w-11/12 h-44 text-start pt-4 mt-5 px-5 text-slate-800 rounded-2xl' placeholder='Write here' name='text' value={formData.text}
             onChange={handleChange} />
         </div>
@@ -136,31 +136,39 @@ const AddProperty = () => {
           <h1 className='text-xl my-5 font-bold'>Basic Information</h1>
           <div className='grid lg:grid-cols-2 md:grid-cols-2 gap-4'>
             <div>
-              <h1 className='text-lg font-semibold'>Location</h1>
-              <input className='outline-none border border-slate-300 w-10/12 h-12 mt-5 px-5  text-sky-500 rounded-2xl' name='location' value={formData.location}
-                onChange={handleChange} placeholder='location' />
-               
+              <h1 className='text-lg font-semibold'>Location <span className='text-red-500'>*</span></h1>
+              <select className='outline-none border border-slate-300 w-10/12 h-12 mt-5 px-5  text-sky-500 rounded-2xl' name='type' value={formData.location}
+                onChange={handleChange}>
+                <option>Select</option>
+                <option >Dhaka</option>
+                <option >Chittagong</option>
+                <option >B-Baria</option>
+                <option >Sylet</option>
+              </select >
+
             </div>
             <div>
-              <h1 className='text-lg font-semibold'>Sub-location</h1>
+              <h1 className='text-lg font-semibold'>Sub-location <span className='text-red-500'>*</span></h1>
               <input className='outline-none border border-slate-300 w-10/12 h-12 mt-5 px-5  text-sky-500 rounded-2xl' name='subLocation' value={formData.subLocation}
-                onChange={handleChange}  placeholder='Sub Location' />
-               
+                onChange={handleChange} placeholder='Sub Location' />
+
             </div>
             <div>
-              <h1 className='text-lg font-semibold'>property Type</h1>
+              <h1 className='text-lg font-semibold'>property Type <span className='text-red-500'>*</span></h1>
               <select className='outline-none border border-slate-300 w-10/12 h-12 mt-5 px-5  text-sky-500 rounded-2xl' name='type' value={formData.type}
                 onChange={handleChange}>
-                <option selected>Sale</option>
+                <option>Select</option>
+                <option >Sale</option>
                 <option >Rent</option>
                 <option >Buy</option>
               </select >
             </div>
             <div>
-              <h1 className='text-lg font-semibold'>Status</h1>
+              <h1 className='text-lg font-semibold'>Status <span className='text-red-500'>*</span></h1>
               <select className='outline-none border border-slate-300 w-10/12 h-12 mt-5 px-5  text-sky-500 rounded-2xl' name='status' value={formData.status}
                 onChange={handleChange} >
-                <option selected>Available</option>
+                <option>Select</option>
+                <option >Available</option>
                 <option >Coming soon</option>
                 <option >Out of sale</option>
               </select >
@@ -169,57 +177,63 @@ const AddProperty = () => {
 
           <div className='grid lg:grid-cols-4 md:grid-cols-2 gap-4 mt-5'>
             <div>
-              <h1 className='text-lg font-semibold'>No of Bedroom</h1>
+              <h1 className='text-lg font-semibold'>No of Bedroom <span className='text-red-500'>*</span></h1>
               <select className='outline-none border border-slate-300 w-10/12 h-12 mt-5 px-5  text-sky-500 rounded-2xl' name='bedroom' value={formData.bedroom}
                 onChange={handleChange}>
-                <option selected>01</option>
+                <option>Select</option>
+                <option >01</option>
                 <option >02</option>
                 <option >03</option>
                 <option >04</option>
               </select >
             </div>
             <div>
-              <h1 className='text-lg font-semibold'>No of Bathroom</h1>
+              <h1 className='text-lg font-semibold'>No of Bathroom <span className='text-red-500'>*</span></h1>
               <select className='outline-none border border-slate-300 w-10/12 h-12 mt-5 px-5  text-sky-500 rounded-2xl' name='bathroom' value={formData.bathroom}
                 onChange={handleChange} >
-                <option selected>01</option>
+                <option>Select</option>
+                <option >01</option>
                 <option >02</option>
                 <option >03</option>
                 <option >04</option>
               </select >
             </div>
             <div>
-              <h1 className='text-lg font-semibold'>No of Kitchen</h1>
+              <h1 className='text-lg font-semibold'>No of Kitchen <span className='text-red-500'>*</span></h1>
               <select className='outline-none border border-slate-300 w-10/12 h-12 mt-5 px-5  text-sky-500 rounded-2xl' name='kitchen' value={formData.kitchen}
                 onChange={handleChange} >
-                <option selected>01</option>
+                <option>Select</option>
+                <option >01</option>
                 <option >02</option>
                 <option >03</option>
               </select >
             </div>
             <div>
-              <h1 className='text-lg font-semibold'>No of Living Room</h1>
+              <h1 className='text-lg font-semibold'>No of Living Room <span className='text-red-500'>*</span></h1>
               <select className='outline-none border border-slate-300 w-10/12 h-12 mt-5 px-5  text-sky-500 rounded-2xl' name='livingRoom' value={formData.livingRoom}
                 onChange={handleChange} >
-                <option selected>01</option>
+                <option>Select</option>
+                <option >01</option>
                 <option > 02</option>
                 <option >03</option>
               </select >
             </div>
             <div>
-              <h1 className='text-lg font-semibold'>No of garage</h1>
+              <h1 className='text-lg font-semibold'>No of garage <span className='text-red-500'>*</span></h1>
               <select className='outline-none border border-slate-300 w-10/12 h-12 mt-5 px-5  text-sky-500 rounded-2xl' name='garage' value={formData.garage}
                 onChange={handleChange} >
-                <option selected> 01</option>
+                <option>Select</option>
+                <option > 01</option>
                 <option >02</option>
                 <option >03</option>
               </select >
             </div>
             <div>
-              <h1 className='text-lg font-semibold'>Area</h1>
+              <h1 className='text-lg font-semibold'>Area <span className='text-red-500'>*</span></h1>
               <select className='outline-none border border-slate-300 w-10/12 h-12 mt-5 px-5  text-sky-500 rounded-2xl' name='area' value={formData.area}
                 onChange={handleChange}>
-                <option selected>600 sqrt</option>
+                <option>Select</option>
+                <option >600 sqrt</option>
                 <option >1100 sqrt</option>
                 <option >1200 sqrt</option>
                 <option >1500 sqrt</option>
@@ -233,8 +247,8 @@ const AddProperty = () => {
           <h1 className='text-xl my-5 font-bold'>Image Gallery</h1>
           <div className='px-10 py-5 border border-sky-500 rounded-full'>
             <div className='flex justify-center'>
-              <p className='bg-sky-500 px-8 py-4 rounded-full text-xl text-white'><input type='file' name='image' className='bg-sky-500 '  onChange={handleImage} /></p>
-              
+              <p className='bg-sky-500 px-8 py-4 rounded-full text-xl text-white'><input type='file' name='image' className='bg-sky-500 ' onChange={handleImage} /></p>
+
               <input />
             </div>
           </div>

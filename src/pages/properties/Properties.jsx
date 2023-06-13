@@ -14,7 +14,7 @@ const Properties = () => {
   const { data: allProperties } = useGetPropertiesQuery();
   const [selectedItem, setSelectedItem] = useState(null);
   const [showAll, setShowAll] = useState(false);
-
+  const [selectedOption, setSelectedOption] = useState([]);
   // Filter item
   const handleClick = (type) => {
     const item = allProperties?.filter((item) => item.type === type);
@@ -154,14 +154,11 @@ const Properties = () => {
             <div className='flex mt-10 justify-center'>
               <button className='px-6 py-5 rounded-full hover:bg-sky-500 border border-sky-500 hover:text-white text-sky-500 font-semibold' disabled={currentPage === 1}
                 onClick={handlePreviousPage}><BiLeftArrow /></button>
-              {/* <p className='px-6 py-5 ml-1 rounded-full hover:bg-sky-500 border border-sky-500 hover:text-white text-sky-500 font-semibold'>02</p>
-              <p className='px-6 py-5 ml-1 rounded-full hover:bg-sky-500 border border-sky-500 hover:text-white text-sky-500 font-semibold'>03</p> */}
+             
               {Array.from({ length: totalPages }, (_, index) => (
                 <button
                   key={index + 1}
                   onClick={() => handlePageChange(index + 1)}
-                  // className={currentPage === index + 1 ? 'active' : ''}
-                  // className='px-6 py-5 ml-1 rounded-full hover:bg-sky-500 border border-sky-500 hover:text-white text-sky-500 font-semibold'
                   className={`px-6 py-5 ml-1 rounded-full hover:bg-sky-500 border border-sky-500 hover:text-white text-sky-500 font-semibold ${currentPage === index + 1 ? 'active' : ''}`}
 
                 >
@@ -178,7 +175,7 @@ const Properties = () => {
           </div>
 
           <div>
-            <PropertyLeftSide />
+            <PropertyLeftSide setSelectedOption={setSelectedOption}  selectedOption={selectedOption} allProperties={allProperties} setSelectedItem={setSelectedItem} setShowAll={setShowAll}/>
 
 
           </div>

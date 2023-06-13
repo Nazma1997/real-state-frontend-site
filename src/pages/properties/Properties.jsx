@@ -86,15 +86,19 @@ const Properties = () => {
                     <div key={item.id} >
                       <Link to={`/properties/${item?._id}`} >
                         <div className="relative max-w-md mx-auto overflow-hidden bg-white rounded-lg shadow-2xl hover:shadow-xl " key={item?.id}>
-                          {/* <div className={`bg-[url(${item?.image})] bg-cover bg-center h-64 transform transition-transform hover:scale-105`}></div> */}
-                          <img src={item?.image} alt='the' className='rounded-t-2xl transform transition-transform hover:scale-105  ' />
-                          {/* <h1 className="text-2xl font-semibold bg-sky-500 py-4 text-center text-white hover:text-blue-800 -mt-10">{item?.type}</h1> */}
+
+                          <div className='flex'>
+                            <img src={item?.image} alt='the' className='rounded-t-2xl transform transition-transform hover:scale-105  ' />
+                            <p>Sale</p>
+                          </div>
+
+
                           <div className="">
                             <h1 className="text-2xl font-semibold bg-sky-500 py-4 text-center text-white hover:text-blue-800">{item?.title}</h1>
                             <div className='p-6 md:p-8'>
                               <h3 className="text-slate-500 ">{item?.subLocation}, {item?.location}</h3>
                               <p className=" text-slate-500">{item?.area}, {item?.bathroom} Bath, {item?.garage} Garage</p>
-                              {/* <h2 className="text-xl font-semibold mt-4 text-center text-slate-500">Price : $ {item?.price} </h2> */}
+
                               {
                                 item?.type === 'Rent' ? <h2 className="text-xl font-semibold mt-4 text-center text-slate-500">Rent : $ {item?.price}/m </h2> : ''
                               }
@@ -122,7 +126,11 @@ const Properties = () => {
                       <Link to={`/properties/${item?._id}`} >
                         <div className="relative max-w-md mx-auto overflow-hidden bg-white rounded-lg shadow-2xl hover:shadow-xl " key={item?.id}>
 
-                          <img src={item?.image} alt='the' className='rounded-t-2xl transform transition-transform hover:scale-105  ' />
+                          {/* <img src={item?.image} alt='the' className='rounded-t-2xl transform transition-transform hover:scale-105  ' /> */}
+                          <div className="flex relative">
+                            <img src={item?.image} alt="the" className="rounded-t-2xl transform transition-transform hover:scale-105 " />
+                            <p className="absolute top-0 right-0 mr-2 mt-2 bg-sky-500  text-white px-5 py-1 rounded-lg">{item?.type}</p>
+                          </div>
 
                           <div className="">
                             <h1 className="text-2xl font-semibold bg-sky-500 py-4 text-center text-white hover:text-blue-800">{item?.title}</h1>
@@ -154,7 +162,7 @@ const Properties = () => {
             <div className='flex mt-10 justify-center'>
               <button className='px-6 py-5 rounded-full hover:bg-sky-500 border border-sky-500 hover:text-white text-sky-500 font-semibold' disabled={currentPage === 1}
                 onClick={handlePreviousPage}><BiLeftArrow /></button>
-             
+
               {Array.from({ length: totalPages }, (_, index) => (
                 <button
                   key={index + 1}
@@ -166,16 +174,16 @@ const Properties = () => {
                 </button>
               ))}
               <button className='px-6 py-5 ml-1 rounded-full hover:bg-sky-500 border border-sky-500 hover:text-white text-sky-500 font-semibold' disabled={currentPage === totalPages}
-                
+
                 onClick={handleNextPage}><BiRightArrow /></button>
 
             </div>
 
-           
+
           </div>
 
           <div>
-            <PropertyLeftSide setSelectedOption={setSelectedOption}  selectedOption={selectedOption} allProperties={allProperties} setSelectedItem={setSelectedItem} setShowAll={setShowAll} selectedItem={selectedItem}/>
+            <PropertyLeftSide setSelectedOption={setSelectedOption} selectedOption={selectedOption} allProperties={allProperties} setSelectedItem={setSelectedItem} setShowAll={setShowAll} selectedItem={selectedItem} />
 
 
           </div>

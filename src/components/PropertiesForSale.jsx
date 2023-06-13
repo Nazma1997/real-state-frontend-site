@@ -16,9 +16,12 @@ const PropertiesForSale = () => {
           
           <Link to={`/properties/${item?._id}`} key={item.id}>
               <div className="relative max-w-md mx-auto overflow-hidden bg-white rounded-lg shadow-2xl hover:shadow-xl " key={item?.id}>
-              {/* <div className={`bg-[url(${item?.image})] bg-cover bg-center h-64 transform transition-transform hover:scale-105`}></div> */}
-              <img src={item?.image} alt='the' className='rounded-t-2xl transform transition-transform hover:scale-105 h-72 ' />
-              {/* <h1 className="text-2xl font-semibold bg-sky-500 py-4 text-center text-white hover:text-blue-800 -mt-10">{item?.type}</h1> */}
+              
+              {/* <img src={item?.image} alt='the' className='rounded-t-2xl transform transition-transform hover:scale-105 h-72 ' /> */}
+              <div className="flex relative">
+                            <img src={item?.image} alt="the" className="rounded-t-2xl transform transition-transform hover:scale-105 " />
+                            <p className="absolute top-0 right-0 mr-2 mt-2 bg-sky-500  text-white px-5 py-1 rounded-lg">{item?.type}</p>
+                          </div>
               <div className="">
                 <h1 className="text-2xl font-semibold bg-sky-500 py-4 text-center text-white hover:text-blue-800">{item?.title}</h1>
                 <div className='p-6 md:p-8'>

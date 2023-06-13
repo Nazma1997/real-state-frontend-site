@@ -18,7 +18,7 @@ const Home = () => {
       <TopBar />
       <NavBar />
       <Background />
-      {/* <ThirdPart /> */}
+      <ThirdPart />
       <LatestProperties />
       <Compromise />
       <PropertiesForSale />

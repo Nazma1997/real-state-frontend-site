@@ -4,7 +4,7 @@ import { CiFacebook, CiLinkedin } from 'react-icons/ci'
 import { FaTwitterSquare } from 'react-icons/fa'
 import MultiRangeSlider from './Range'
 
-const PropertyLeftSide = ({ setSelectedOption, selectedOption, allProperties, setSelectedItem , setShowAll}) => {
+const PropertyLeftSide = ({ setSelectedOption, selectedOption, allProperties, setSelectedItem, setShowAll }) => {
   return (
     <div>
       <div className='ml-5 mt-10'>
@@ -31,43 +31,92 @@ const PropertyLeftSide = ({ setSelectedOption, selectedOption, allProperties, se
             <option value='Rent'>For Rent</option>
             <option value='Buy'>For Buy</option>
           </select>
-          <select className='border border-slate-300 text-slate-500  rounded-2xl px-5 py-3 outline-none' 
+          <select className='border border-slate-300 text-slate-500  rounded-2xl px-5 py-3 outline-none'
             value={selectedOption}
             onChange={(e) => {
               const options = Array.from(e.target.selectedOptions, option => option.value);
               const items = allProperties?.filter((item) => options.includes(item.location));
-             
+
               setSelectedItem(items);
               setShowAll(false);
               setSelectedOption(options);
             }}
           >
             <option>Location</option>
-                <option value='Dhaka'>Dhaka</option>
-                <option value='Chittagong'>Chittagong</option>
-                <option value='B-Baria'>B-Baria</option>
-                <option value='Sylet'>Sylet</option>
+            <option value='Dhaka'>Dhaka</option>
+            <option value='Chittagong'>Chittagong</option>
+            <option value='B-Baria'>B-Baria</option>
+            <option value='Sylet'>Sylet</option>
 
           </select>
-          <select className='border border-slate-300 text-slate-500  rounded-2xl px-5 py-3 outline-none'>
-            <option selected className='bg-white border border-white'>All Type</option>
-            <option className='bg-white  border border-white' >Location 2</option>
-            <option className='bg-white  border border-white'>Location 2</option>
+          <select className='border border-slate-300 text-slate-500  rounded-2xl px-5 py-3 outline-none'
+            value={selectedOption}
+            onChange={(e) => {
+              const options = Array.from(e.target.selectedOptions, option => option.value);
+              const items = allProperties?.filter((item) => options.includes(item.garage));
+
+              setSelectedItem(items);
+              setShowAll(false);
+              setSelectedOption(options);
+            }}
+          >
+            <option selected className='bg-white border border-white'>Garage</option>
+            <option className='bg-white  border border-white' value='01'>01</option>
+            <option className='bg-white  border border-white' value='02'>02</option>
+            <option className='bg-white  border border-white' value='03'>03</option>
           </select>
-          <select className='border border-slate-300 text-slate-500  rounded-2xl px-5 py-3 outline-none'>
-            <option selected className='bg-white border border-white'>Area(sqft)</option>
-            <option className='bg-white  border border-white' >Location 2</option>
-            <option className='bg-white  border border-white'>Location 2</option>
+          <select className='border border-slate-300 text-slate-500  rounded-2xl px-5 py-3 outline-none'
+            value={selectedOption}
+            onChange={(e) => {
+              const options = Array.from(e.target.selectedOptions, option => option.value);
+              const items = allProperties?.filter((item) => options.includes(item.area));
+
+              setSelectedItem(items);
+              setShowAll(false);
+              setSelectedOption(options);
+            }}
+          >
+
+            <option className='bg-white border border-white'>Area(sqrt)</option>
+            <option className='bg-white border border-white'>600 sqrt</option>
+            <option className='bg-white border border-white'>1100 sqrt</option>
+            <option className='bg-white border border-white'>1200 sqrt</option>
+            <option className='bg-white border border-white'>1500 sqrt</option>
+            <option className='bg-white border border-white'>1600 sqrt</option>
           </select>
-          <select className='border border-slate-300 text-slate-500  rounded-2xl px-5 py-3 outline-none'>
-            <option selected className='bg-white border border-white'>Bedroom</option>
-            <option className='bg-white  border border-white' >Location 2</option>
-            <option className='bg-white  border border-white'>Location 2</option>
+          <select className='border border-slate-300 text-slate-500  rounded-2xl px-5 py-3 outline-none'
+            onChange={(e) => {
+              const options = Array.from(e.target.selectedOptions, option => option.value);
+              const items = allProperties?.filter((item) => options.includes(item.bedroom));
+
+              setSelectedItem(items);
+              setShowAll(false);
+              setSelectedOption(options);
+            }}
+          >
+            <option>Bedroom</option>
+            <option className='bg-white border border-white' value='01'>01</option>
+            <option className='bg-white border border-white' value='02'>02</option>
+            <option className='bg-white border border-white' value='03'>03</option>
+            <option className='bg-white border border-white' value='04'>04</option>
           </select>
-          <select className='border border-slate-300 text-slate-500  rounded-2xl px-5 py-3 outline-none'>
-            <option selected className='bg-white border border-white'>Bathroom</option>
-            <option className='bg-white  border border-white' >Location 2</option>
-            <option className='bg-white  border border-white'>Location 2</option>
+          <select className='border border-slate-300 text-slate-500  rounded-2xl px-5 py-3 outline-none'
+            value={selectedOption}
+            onChange={(e) => {
+              const options = Array.from(e.target.selectedOptions, option => option.value);
+              const items = allProperties?.filter((item) => options.includes(item.bathroom));
+
+              setSelectedItem(items);
+              setShowAll(false);
+              setSelectedOption(options);
+            }}
+          >
+
+            <option>Bathroom</option>
+            <option className='bg-white border border-white' value='01'>01</option>
+            <option className='bg-white border border-white' value='02'>02</option>
+            <option className='bg-white border border-white' value='03'>03</option>
+            <option className='bg-white border border-white' value='04'>04</option>
           </select>
 
         </div>

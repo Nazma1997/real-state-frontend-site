@@ -29,7 +29,7 @@ const AddProperty = () => {
   const apiKey = '837d05f4d0c9787e5980a5a7fe323afd';
 
 
-  // console.log(formData)
+  console.log(formData)
   const formSubmit = async (event) => {
     event.preventDefault();
 
@@ -47,7 +47,7 @@ const AddProperty = () => {
       formData.area === '' ||
       formData.kitchen === '' ||
       formData.livingRoom === '' ||
-      formData.image === '' ||
+      // formData.image === '' ||
       formData.userId === ''
     ) {
       toast.error('Invalid Data');
@@ -138,7 +138,7 @@ const AddProperty = () => {
           <div className='grid lg:grid-cols-2 md:grid-cols-2 gap-4'>
             <div>
               <h1 className='text-lg font-semibold'>Location <span className='text-red-500'>*</span></h1>
-              <select className='outline-none border border-slate-300 w-10/12 h-12 mt-5 px-5  text-sky-500 rounded-2xl' name='type' value={formData.location}
+              <select className='outline-none border border-slate-300 w-10/12 h-12 mt-5 px-5  text-sky-500 rounded-2xl' name='location' value={formData.location}
                 onChange={handleChange}>
                 <option>Select</option>
                 <option >Dhaka</option>
@@ -148,6 +148,8 @@ const AddProperty = () => {
               </select >
 
             </div>
+
+           
             <div>
               <h1 className='text-lg font-semibold'>Sub-location <span className='text-red-500'>*</span></h1>
               <input className='outline-none border border-slate-300 w-10/12 h-12 mt-5 px-5  text-sky-500 rounded-2xl' name='subLocation' value={formData.subLocation}

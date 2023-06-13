@@ -63,7 +63,7 @@ const AddProperty = () => {
       const image = imgbbResponse.data.data.url;
 
 
-      await axios.post('http://localhost:5000/api/v1/properties', {
+      await axios.post('https://real-state-backend-site.vercel.app/api/v1/properties', {
         ...formData,
         image
       });

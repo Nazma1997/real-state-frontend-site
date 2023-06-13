@@ -143,13 +143,15 @@
 }
 
 .slider__track {
-  background-color:#00c2e0;
+  /* background-color:#00c2e0; */
+  background-color: gray;
   width: 100%;
   z-index: 1;
 }
 
 .slider__range {
   background-color: #00c2e0;
+  /* background-color: gray; */
   z-index: 2;
 }
 

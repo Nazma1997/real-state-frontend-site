@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState, useRef } from "react";
 import PropTypes from "prop-types";
 
 
-const MultiRangeSlider = ({ min, max, onChange }) => {
+const MultiRangeSlider = ({ min, max, onChange,setSelectedOption, selectedOption, allProperties, setSelectedItem, setShowAll, selectedItem  }) => {
   const [minVal, setMinVal] = useState(min);
   const [maxVal, setMaxVal] = useState(max);
   const minValRef = useRef(min);
@@ -40,6 +40,14 @@ const MultiRangeSlider = ({ min, max, onChange }) => {
   useEffect(() => {
     onChange({ min: minVal, max: maxVal });
   }, [minVal, maxVal, onChange]);
+
+  useEffect(() => {
+    onChange({ min: minVal, max: maxVal });
+
+    // Filter items based on the selected range
+    const filtered = allProperties?.filter((item) => item.price >= minVal && item.price <= maxVal);
+    setSelectedItem(filtered);
+  }, [minVal, maxVal, onChange, allProperties]);
 
   return (
     <div className="mt-10 mx-10">

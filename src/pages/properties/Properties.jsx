@@ -175,7 +175,7 @@ const Properties = () => {
           </div>
 
           <div>
-            <PropertyLeftSide setSelectedOption={setSelectedOption}  selectedOption={selectedOption} allProperties={allProperties} setSelectedItem={setSelectedItem} setShowAll={setShowAll}/>
+            <PropertyLeftSide setSelectedOption={setSelectedOption}  selectedOption={selectedOption} allProperties={allProperties} setSelectedItem={setSelectedItem} setShowAll={setShowAll} selectedItem={selectedItem}/>
 
 
           </div>

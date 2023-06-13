@@ -3,8 +3,11 @@ import { CgMail } from 'react-icons/cg'
 import { CiFacebook, CiLinkedin } from 'react-icons/ci'
 import { FaTwitterSquare } from 'react-icons/fa'
 import MultiRangeSlider from './Range'
+import { Link } from 'react-router-dom'
 
-const PropertyLeftSide = ({ setSelectedOption, selectedOption, allProperties, setSelectedItem, setShowAll }) => {
+const PropertyLeftSide = ({ setSelectedOption, selectedOption, allProperties, setSelectedItem, setShowAll, selectedItem }) => {
+
+  const uniquePrices = Array.from(new Set(allProperties?.map(item => item.price)));
   return (
     <div>
       <div className='ml-5 mt-10'>
@@ -119,31 +122,62 @@ const PropertyLeftSide = ({ setSelectedOption, selectedOption, allProperties, se
             <option className='bg-white border border-white' value='04'>04</option>
           </select>
 
+          <select className='border border-slate-300 text-slate-500  rounded-2xl px-5 py-3 outline-none'
+            value={selectedOption}
+            onChange={(e) => {
+              const options = Array.from(e.target.selectedOptions, option => option.value);
+              const items = allProperties?.filter((item) => options.includes(item?.price));
+
+              setSelectedItem(items);
+              setShowAll(false);
+              setSelectedOption(options);
+            }}
+          >
+
+            <option>Price</option>
+            {uniquePrices.map(price => (
+              <option
+                className='bg-white border border-white'
+                value={price}
+                key={price}
+              >
+                {price}
+              </option>
+            ))}
+
+          </select>
+
+
         </div>
 
-        <MultiRangeSlider
+        {/* <MultiRangeSlider
           min={500}
           max={10000}
           onChange={({ min, max }) => console.log(`min = ${min}, max = ${max}`)}
+          setSelectedOption={setSelectedOption}  selectedOption={selectedOption} allProperties={allProperties} setSelectedItem={setSelectedItem} setShowAll={setShowAll} selectedItem={selectedItem}
 
-        />
+        /> */}
 
-        <button className=" border border-sky-500 hover:border-slate-700 lg:px-28 py-3 md:px-7 px-5 mt-24 rounded-full bg-sky-500 font-bold text-xl text-white ml-3 hover:bg-slate-700">
+        {/* <button className=" border border-sky-500 hover:border-slate-700 lg:px-28 py-3 md:px-7 px-5 mt-24 rounded-full bg-sky-500 font-bold text-xl text-white ml-3 hover:bg-slate-700">
           Search
-        </button>
+        </button> */}
 
         <p className='border-b-2 border-l-2 border-sky-500 text-lg font-semibold mt-10'> <span className='ml-2  '>New Added Property</span></p>
 
-        <div className="  mt-10   w-full bg-slate-300 rounded-2xl" >
-          <img src='https://htmldemo.net/ortiz/ortiz/assets/images/propertes/property-lg-01.jpg' alt='the' className='h-full w-full rounded-2xl' />
-          <h1 className='text-slate-500  hover:text-blue-700 text-center lg:text-2xl md:text-xl  font-bold '>Duplex House</h1>
-          <h1 className='text-sky-500   text-center lg:text-xl  font-bold my-3 pb-5'>Price $ 2000</h1>
-        </div>
-        <div className="  mt-10   w-full bg-slate-300 rounded-2xl" >
-          <img src='https://htmldemo.net/ortiz/ortiz/assets/images/propertes/property-lg-01.jpg' alt='the' className='h-full w-full rounded-2xl' />
-          <h1 className='text-slate-500  hover:text-blue-700 text-center lg:text-2xl md:text-xl  font-bold '>Duplex House</h1>
-          <h1 className='text-sky-500   text-center lg:text-xl  font-bold my-3 pb-5'>Price $ 2000</h1>
-        </div>
+
+
+        {
+          allProperties?.slice(0, 3)?.map(item =>
+            <Link to={`/properties/${item?._id}`} key={item?._id}>
+              <div className="  mt-10   w-full bg-slate-300 rounded-2xl"  >
+                <img src={item?.image} alt='the' className=' rounded-t-2xl w-96' />
+                <h1 className='text-slate-500  hover:text-blue-700 text-center lg:text-2xl md:text-xl  font-bold '>{item?.title}</h1>
+                <h1 className='text-sky-500   text-center lg:text-xl  font-bold my-3 pb-5'>Price ${item?.price}</h1>
+              </div>
+            </Link>
+          )
+        }
+
 
 
         <p className='border-b-2 border-l-2 border-sky-500 text-lg font-semibold mt-10'> <span className='ml-2  '>Our Agent</span></p>

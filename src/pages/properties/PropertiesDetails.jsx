@@ -16,7 +16,7 @@ const PropertiesDetails = () => {
   console.log(property)
 
   const words = property?.text.trim().split(/\s+/);
-  const first100Words = words.slice(0, 50).join(' ');
+  const first100Words = words.slice(0, 20).join(' ');
   
   return (
     <>
@@ -28,7 +28,7 @@ const PropertiesDetails = () => {
           <img src={property?.image} alt='the' className='h-full rounded-t-2xl' />
           <div className='mx-6 text-slate-800 mb-16 '>
             <h1 className='mt-5 text-2xl font-bold'>{property?.title}</h1>
-            <p className='text-lg mt-3 '>{first100Words}</p>
+            <p className='text-lg mt-3 '>{first100Words}.</p>
             <p className='text-xl mt-3'>Description</p>
             <p className='text-lg mt-3 mb-3'>{property?.text}</p>
             <hr className='bg-slate-500 h-0.5 my-10' />

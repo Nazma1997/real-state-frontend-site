@@ -3,15 +3,16 @@ import TopBar from '../../components/navigation/Topbar'
 import NavBar2 from '../../components/navigation/NavBar2'
 import Footer from '../../components/Footer'
 import BottomNavbar from '../../components/navigation/BottomNavbar'
-import { useCreatePropertiesMutation, useGetAllUsersQuery } from '../../redux/apiSlice'
+import { useGetAllUsersQuery } from '../../redux/apiSlice'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import axios from 'axios'
+const BASE_URL = import.meta.env.VITE_BASE_URL;
+// console.log('Base', BASE_URL)
 
 const AddProperty = () => {
-  const [createProperties] = useCreatePropertiesMutation();
+ 
   const { data: getAllUsers } = useGetAllUsersQuery();
-  // console.log(getAllUsers)
   const navigate = useNavigate();
   const [productImage, setProductImage] = useState(null);
 
@@ -22,13 +23,13 @@ const AddProperty = () => {
 
   const getUser = getAllUsers?.filter(item => item.email === email)[0]
   const userId = getUser?._id
-  console.log(userId)
+  // console.log(userId)
 
   const [formData, setFormData] = useState({ title: '', price: '', text: '', location: '', subLocation: '', type: '', status: '', bedroom: '', bathroom: '', garage: '', area: '', kitchen: '', livingRoom: '', video: '', image: productImage, userId: userId });
   const apiKey = '837d05f4d0c9787e5980a5a7fe323afd';
 
 
-  console.log(formData)
+  // console.log(formData)
   const formSubmit = async (event) => {
     event.preventDefault();
 
@@ -46,7 +47,7 @@ const AddProperty = () => {
       formData.area === '' ||
       formData.kitchen === '' ||
       formData.livingRoom === '' ||
-      // formData.image === '' ||
+      formData.image === '' ||
       formData.userId === ''
     ) {
       toast.error('Invalid Data');
@@ -63,7 +64,7 @@ const AddProperty = () => {
       const image = imgbbResponse.data.data.url;
 
 
-      await axios.post('https://real-state-backend-site.vercel.app/api/v1/properties', {
+      await axios.post(`${BASE_URL}/properties`, {
         ...formData,
         image
       });

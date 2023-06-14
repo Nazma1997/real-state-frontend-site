@@ -29,7 +29,7 @@ const Properties = () => {
 
 
   // Pagination
-  const itemsPerPage = 12;
+  const itemsPerPage = 6;
   const [currentPage, setCurrentPage] = useState(1);
 
   const totalItems = showAll ? allProperties?.length : selectedItem?.length;

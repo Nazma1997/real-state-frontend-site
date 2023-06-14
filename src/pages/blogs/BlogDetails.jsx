@@ -4,12 +4,35 @@ import NavBar2 from '../../components/navigation/NavBar2'
 import BottomNavbar from '../../components/navigation/BottomNavbar'
 import BlogLeftSide from '../../components/BlogLeftSide'
 import Footer from '../../components/Footer'
+import { useGetAllUsersQuery, useGetBlogsQuery } from '../../redux/apiSlice'
+import { useParams } from 'react-router-dom'
 
 
 
 const BlogDetails = () => {
 
+  const { data: allBlog } = useGetBlogsQuery()
+  const {data : allUsers} = useGetAllUsersQuery();
+
+  const { id } = useParams();
+  const property = allBlog?.filter(item => item?._id === id)[0]
+  const user = allUsers?.filter(item => item?._id === property?.userId)[0]
+
+  // console.log('user', user)
+  const words = property?.text.trim().split(/\s+/);
+  const first100Words = words?.slice(0, 20).join(' ');
+
   
+  const dateObj = new Date(property?.date);
+  
+  // console.log(property)
+
+
+  const day = dateObj.getDate();
+  const month = dateObj.getMonth() + 1; 
+  const year = dateObj.getFullYear();
+
+  const formattedDate = `${month}/${day}/${year}`;
   return (
    <>
      <TopBar />
@@ -18,15 +41,17 @@ const BlogDetails = () => {
 
      <div className='lg:max-w-6xl lg:mx-auto lg:flex px-4 lg:px-8 mt-24 mb-16 '>
         <div className='mb-auto mt-5 bg-slate-100 rounded-2xl '>
-          <img src='https://htmldemo.net/ortiz/ortiz/assets/images/hero/hero-4.jpg' alt='the' className='h-full rounded-t-2xl' />
+          <img src={property?.image} alt='the' className='h-full rounded-t-2xl' />
           <div className='mx-6 text-slate-800 mb-16 '>
-            <h1 className='mt-5 text-2xl font-bold'>Duplex Appartment Latest Design</h1>
-            <p className='text-slate-500 my-5'>May 10, 2018 / 10 pm</p>
-            <p className='text-lg mt-3 '>Ortiz is one of the most popular real estate company all around USA. You can find your dream property or build property with us. We always provide importance to our customer that what they want or what they like ipsam</p>
-            <p className='text-xl mt-3'>Description</p>
-            <p className='text-lg mt-3 mb-3'>Ortiz is one of the most popular real estate company all around USA. You can find your dream property or build property with us. We always provide importance to our customer that what they want or what they like ipsam ursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure
+            <h1 className='mt-5 text-2xl font-bold'>{property?.title}</h1>
+            <div className='flex'>
+            <p className='text-slate-500 my-5 mr-2'>{user?.fName} {user?.lName} ,</p>
+            <p className='text-slate-500 my-5'>{formattedDate}, 10 pm</p>
 
-              Ortiz is one of the most popular real estate company all around USA. You can find your dream property or build property with us. We always provide importance to our customer that what they want or what they like ipsam ursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone</p>
+            </div>
+            <p className='text-lg mt-3 '>{first100Words}</p>
+            <p className='text-xl mt-3'>Description</p>
+            <p className='text-lg mt-3 mb-3'>{property?.text}</p>
            
            <p  className='text-lg mt-3'><strong>Tags:</strong> Apartment, Building, Real Estate, Commercial</p>
 

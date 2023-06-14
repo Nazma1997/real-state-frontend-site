@@ -20,17 +20,7 @@ const Blog = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
 
-  const createdAt = allLatestProperties?.map(item => item.date);
-  const dateObj = new Date(createdAt);
   
-
-
-
-  const day = dateObj.getDate();
-  const month = dateObj.getMonth() + 1; 
-  const year = dateObj.getFullYear();
-
-  const formattedDate = `${month}/${day}/${year}`;
 
   const handleSearch = (event) => {
     const value = event.target.value;
@@ -47,7 +37,7 @@ const Blog = () => {
   };
 
   // Pagination
-  const itemsPerPage = 8;
+  const itemsPerPage = 6;
   const [currentPage, setCurrentPage] = useState(1);
 
 
@@ -99,7 +89,7 @@ const Blog = () => {
                   <Link
                     to={`/blogs/${item._id}`} key={item.id}>
                     <div className='bg-slate-100 pb-5 rounded-2xl '>
-                      <img src={test} alt='the' className='rounded-t-2xl transform transition-transform hover:scale-105' />
+                      <img src={item?.image} alt='the' className='rounded-t-2xl transform transition-transform hover:scale-105' />
                       <div className='mx-5 shadow-slate-700	'>
                         <h1 className='text-xl font-semibold my-5 mx-2 hover:text-sky-500'>{item?.title}</h1>
                       
@@ -113,7 +103,7 @@ const Blog = () => {
                 : searchResults.map((item) => (
                   <Link to={`/blogs/${item._id}`} key={item.id}>
                     <div className='bg-slate-100 pb-5 rounded-2xl '>
-                      <img src={test} alt='the' className='rounded-t-2xl transform transition-transform hover:scale-105' />
+                      <img src={item?.image} alt='the' className='rounded-t-2xl transform transition-transform hover:scale-105' />
                       <div className='mx-5 shadow-slate-700	'>
                         <h1 className='text-xl font-semibold my-5 mx-2 hover:text-sky-500'>{item?.title}</h1>
                         <p className='mx-2'>{item?.text.slice(0, 90)}.</p>

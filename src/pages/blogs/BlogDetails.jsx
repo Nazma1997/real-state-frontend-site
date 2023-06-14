@@ -8,6 +8,8 @@ import Footer from '../../components/Footer'
 
 
 const BlogDetails = () => {
+
+  
   return (
    <>
      <TopBar />

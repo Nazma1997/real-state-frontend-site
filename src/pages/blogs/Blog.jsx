@@ -27,7 +27,7 @@ const Blog = () => {
 
 
   const day = dateObj.getDate();
-  const month = dateObj.getMonth() + 1; // Months are zero-based, so add 1
+  const month = dateObj.getMonth() + 1; 
   const year = dateObj.getFullYear();
 
   const formattedDate = `${month}/${day}/${year}`;
@@ -47,7 +47,7 @@ const Blog = () => {
   };
 
   // Pagination
-  const itemsPerPage = 12;
+  const itemsPerPage = 8;
   const [currentPage, setCurrentPage] = useState(1);
 
 
@@ -70,6 +70,14 @@ const Blog = () => {
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const displayedItems = allLatestProperties?.slice(startIndex, endIndex);
+
+  // const Appartment= allLatestProperties?.filter(item => item?.category === 'Appartment')?.length
+  // const Appartment_Building = allLatestProperties?.filter(item => item?.category === 'Appartment Building')?.length
+  // const Duplex_Villa = allLatestProperties?.filter(item => item?.category === 'Duplex Villa')?.length
+  // const Corporate_Building = allLatestProperties?.filter(item => item?.category === 'Corporate Building')?.length
+  // const Bangalow = allLatestProperties?.filter(item => item?.category === 'Bangalow')?.length
+  // const Commercial_Complex = allLatestProperties?filter(item => item.category === 'Commercial Complex')?.length
+
 
 
   return (
@@ -132,7 +140,7 @@ const Blog = () => {
                 <button
                   key={index + 1}
                   onClick={() => handlePageChange(index + 1)}
-                  className={`${currentPage === index + 1 ? 'active' : ''} px-6 py-5 ml-1 rounded-full hover:bg-sky-500 border border-sky-500 hover:text-white text-sky-500 font-semibold`}
+                  className={`${currentPage === index + 1 ? 'active' : ''} px-6 py-5 mx-1 rounded-full hover:bg-sky-500 border border-sky-500 hover:text-white text-sky-500 font-semibold`}
 
 
                 >
@@ -152,7 +160,7 @@ const Blog = () => {
           </div>
 
           <BlogLeftSide searchTerm={searchTerm}
-            handleSearch={handleSearch} />
+            handleSearch={handleSearch} allLatestProperties={allLatestProperties} />
 
 
 

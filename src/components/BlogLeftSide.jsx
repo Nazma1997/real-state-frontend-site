@@ -1,35 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import test from '../images/test.png'
+import { useGetAllUsersQuery } from '../redux/apiSlice'
 
-const allLatestProperties = [
-  {
-    id: 1,
-    title: 'the title'
-  },
-  {
-    id: 2,
-    title: 'the title'
-  },
-  {
-    id: 3,
-    title: 'the title'
-  },
-  {
-    id: 4,
-    title: 'the title'
-  },
-  {
-    id: 5,
-    title: 'the title'
-  },
-  {
-    id: 6,
-    title: 'the title'
-  },
 
-]
-const BlogLeftSide = ({ searchTerm, handleSearch }) => {
+
+const BlogLeftSide = ({ searchTerm, handleSearch , allLatestProperties}) => {
+
+  // console.log('ca', allLatestProperties?.map(item => item?.userId))
+  const {data : allUsers} = useGetAllUsersQuery()
+  
+
+  
+  
   return (
     <div className='lg:mx-5 mt-5'>
       <p className='border-b-2 border-l-2 border-sky-500 text-lg font-semibold '> <span className='ml-2  '>Search Here</span></p>
@@ -43,15 +26,15 @@ const BlogLeftSide = ({ searchTerm, handleSearch }) => {
           <p className='text-slate-700 text-lg  mt-1'>Duplex Villa</p>
           <p className='text-slate-700 text-lg  mt-1'>Corporate Building</p>
           <p className='text-slate-700 text-lg  mt-1'>Bangalow</p>
-          <p className='text-slate-700 text-lg  mt-1'>Commercial Comples</p>
+          <p className='text-slate-700 text-lg  mt-1'>Commercial Complex</p>
         </div>
         <div>
-          <p className='text-slate-700 text-lg'>24</p>
-          <p className='text-slate-700 text-lg  mt-1'>24</p>
-          <p className='text-slate-700 text-lg  mt-1'>24</p>
-          <p className='text-slate-700 text-lg  mt-1'>24</p>
-          <p className='text-slate-700 text-lg  mt-1'>24</p>
-          <p className='text-slate-700 text-lg  mt-1'>24</p>
+          <p className='text-slate-700 text-lg'>{allLatestProperties?.filter(item => item?.category === 'Appartment')?.length}</p>
+          <p className='text-slate-700 text-lg  mt-1'>{allLatestProperties?.filter(item => item?.category === 'Appartment Building')?.length}</p>
+          <p className='text-slate-700 text-lg  mt-1'>{allLatestProperties?.filter(item => item?.category === 'Duplex Villa')?.length}</p>
+          <p className='text-slate-700 text-lg  mt-1'>{allLatestProperties?.filter(item => item?.category === 'Corporate Building')?.length}</p>
+          <p className='text-slate-700 text-lg  mt-1'>{allLatestProperties?.filter(item => item?.category === 'Bangalow')?.length}</p>
+          <p className='text-slate-700 text-lg  mt-1'>{allLatestProperties?.filter(item => item.category === 'Commercial Complex')?.length}</p>
 
         </div>
       </div>
@@ -59,11 +42,11 @@ const BlogLeftSide = ({ searchTerm, handleSearch }) => {
 
       {
         allLatestProperties?.slice(0, 3)?.map(item =>
-          <Link to={`/blogs/${item.id}`} key={item?.id} >
+          <Link to={`/blogs/${item._id}`} key={item?.id} >
             <div className='flex mt-5'>
-              <img src={test} alt='the' className='w-28 h-20 my-3 transform transition-transform hover:scale-105 rounded-xl' />
+              <img src={item?.image} alt='the' className='w-28 h-20 my-3 transform transition-transform hover:scale-105 rounded-xl' />
               <div className='ml-2'>
-                <h1 className='text-lg font-semibold hover:text-sky-700'>Latest Design Home</h1>
+                <h1 className='text-lg font-semibold hover:text-sky-700'>{item?.title}</h1>
                 <p className='text-slate-400'><strong className='hover:text-sky-500'>Ronchi</strong> / 17 May, 2023</p>
                 <p className='text-slate-400'>Lorem must explain to ten how all this mistakenea</p>
 
@@ -78,8 +61,10 @@ const BlogLeftSide = ({ searchTerm, handleSearch }) => {
       <p className='border-b-2 border-l-2 border-sky-500 text-lg font-semibold my-5 '> <span className='ml-2  '>Latest Tweet</span></p>
 
       {
-        allLatestProperties?.slice(0, 3).map(item => <p key={item.id} className='my-4'><strong className='text-sky-500'>@Design Concept</strong> dolor sit amet, costetur acing elit, sed do eiusmod tempor corporis suscipit am, nisi ut aliquid ex ea commodi consequatur.
-          <span className='text-sky-500'>Ronchi / 3 hour ago</span></p>)
+        allLatestProperties?.slice(0, 3).map(item => <Link to={`/blogs/${item._id}` } key={item._id}>
+          <p  className='my-4'><strong className='text-sky-500'>@Design Concept</strong> {item?.text?.slice(0,50)}.
+          <span className='text-sky-500'>Ronchi / 3 hour ago</span></p>
+        </Link>)
       }
 
       <p className='border-b-2 border-l-2 border-sky-500 text-lg font-semibold my-5 '> <span className='ml-2  '>Tag</span></p>

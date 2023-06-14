@@ -1,23 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import test from '../images/test.png'
-const allLatestProperties = [
-  {
-    id: 1,
-    title: 'the title'
-  },
-  {
-    id: 2,
-    title: 'the title'
-  },
-  {
-    id: 3,
-    title: 'the title'
-  },
- 
+import { useGetBlogsQuery } from '../redux/apiSlice'
 
-]
 const BlogCard = () => {
+
+  const { data: allLatestProperties } = useGetBlogsQuery()
   return (
     <div className='lg:max-w-7xl lg:mx-auto px-4 lg:px-8 mb-10 mt-72 md:mt-16 lg:mt-16'>
       <h1 className='text-center text-4xl font-bold'>Latest Blog Post</h1>
@@ -29,13 +17,12 @@ const BlogCard = () => {
   allLatestProperties?.map(item =>
 
 
-    <Link to={`/blogs/${item.id}`} key={item.id}>
+    <Link to={`/blogs/${item._id}`} key={item.id}>
     <div className='bg-slate-100 pb-5 rounded-2xl '>
-      <img src={test} alt='the' className='rounded-t-2xl transform transition-transform hover:scale-105' />
+      <img src={item?.image} alt='the' className='rounded-t-2xl transform transition-transform hover:scale-105' />
       <div className='mx-5 shadow-slate-700	'>
-        <h1 className='text-xl font-semibold my-5 mx-2 hover:text-sky-500'>Duplex Appartment Latest Design</h1>
-        <p className='mx-2 '>May 10, 2023 / 10 pm</p>
-        <p className='mx-2'>Real estate festival is one of the famous feval for explain to you how all this mistaolt deand praising pain wasnad I will give complete</p>
+        <h1 className='text-xl font-semibold my-5 mx-2 hover:text-sky-500'>{item?.title}</h1>
+        <p className='mx-2'>{item?.text.slice(0, 90)}.</p>
         <p className='mx-2 text-sky-500 '>Read More</p>
       </div>
     </div>

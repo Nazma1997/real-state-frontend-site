@@ -17,6 +17,11 @@ const TopBar = () => {
                 <button className='text-white bg-sky-400 px-7 lg:py-2 py-0.5 md:py-2  rounded-full hover:bg-black	lg:font-semibold md:font-semibold 	'>Add Property</button>
               </Link>
               }
+              {
+                user && <Link to='/add-blog' >
+                <button className='text-white bg-sky-400 px-7 lg:py-2 py-0.5 md:py-2  rounded-full hover:bg-black	lg:font-semibold md:font-semibold 	'>Add Blog</button>
+              </Link>
+              }
 
               <Link to='/register'>
                 <p className='text-sky-400  lg:px-7 py-3 md:px-7 px-5 rounded-full hover:bg-sky-400	font-semibold lg:mx-1 md:mx-1 mx-2 hover:text-black	'>Register</p>

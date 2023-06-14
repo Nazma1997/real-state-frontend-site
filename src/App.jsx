@@ -12,6 +12,7 @@ import BlogDetails from "./pages/blogs/BlogDetails"
 import Agent from "./pages/agent/Agent"
 import AgentDetails from "./pages/agent/AgentDetails"
 import Contract from "./pages/contract/Contract"
+import AddBlog from "./pages/blogs/AddBlog"
 
 
 
@@ -35,6 +36,7 @@ function App() {
         <Route path='/add-property' element={<AddProperty />} />
         <Route path='/blogs' element={<Blog />} />
         <Route path='/blogs/:id' element={<BlogDetails/>} />
+        <Route path='/add-blog' element={<AddBlog />} />
         <Route path='/agents' element={<Agent />} />
         <Route path='/agents/:id' element={<AgentDetails />} />
         <Route path='/contract' element={<Contract />} />

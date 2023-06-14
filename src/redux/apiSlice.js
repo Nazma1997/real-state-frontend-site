@@ -6,7 +6,7 @@ const BASE_URL = import.meta.env.VITE_BASE_URL;
 export const serverApi = createApi({
   reducerPath: 'serverApi',
   baseQuery: fetchBaseQuery({baseUrl: BASE_URL}),
-  tagTypes: ['Properties', 'User'],
+  tagTypes: ['Properties', 'User', 'Blog'],
   endpoints: (builder) => ({
     getProperties: builder.query({
       query: () => `/properties`,
@@ -63,12 +63,31 @@ export const serverApi = createApi({
       query: () => `/users`,
       providesTags: ['Properties'],
     }),
+    
+    
+  //Blog Slice
+    getBlogs: builder.query({
+      query: () => `/blogs`,
+      providesTags: ['Blog'],
+    }),
+    createBlog: builder.mutation({
+      query: (data) => ({
+        url: `/add-blog`,
+        method: 'POST',
+        body: data
+      }),
+      invalidatesTags: ['Blog']
+    }),
   
   }),
+
+  
+   
+
 })
 // })
 
 
-export const {useGetPropertiesQuery, useGetAllUsersQuery, useCreatePropertiesMutation, useCreateUserMutation, useLogedUserMutation, useUpdatePropertiesMutation,useDeletePropertiesMutation } = serverApi
+export const {useGetPropertiesQuery,useGetBlogsQuery, useCreateBlogMutation, useGetAllUsersQuery, useCreatePropertiesMutation, useCreateUserMutation, useLogedUserMutation, useUpdatePropertiesMutation,useDeletePropertiesMutation } = serverApi
 
 

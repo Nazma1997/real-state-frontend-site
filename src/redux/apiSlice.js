@@ -9,12 +9,12 @@ export const serverApi = createApi({
   tagTypes: ['Properties', 'User', 'Blog'],
   endpoints: (builder) => ({
     getProperties: builder.query({
-      query: () => `/properties`,
+      query: () => `/api/v1/properties`,
       providesTags: ['Properties'],
     }),
     createProperties: builder.mutation({
       query: (data) => ({
-        url: `/properties`,
+        url: `/api/v1/properties`,
         method: 'POST',
         body: data
       }),
@@ -24,7 +24,7 @@ export const serverApi = createApi({
 
     deleteProperties: builder.mutation({
         query:(id) => ({
-          url: `/properties/${id}`,
+          url: `/api/v1/properties/${id}`,
           method: 'DELETE'
         }),
         invalidatesTags: ['Properties']
@@ -33,7 +33,7 @@ export const serverApi = createApi({
     updateProperties: builder.mutation({ 
      query: function(data){
         return{
-          url: `/properties/${data._id}`,
+          url: `/api/v1/properties/${data._id}`,
             method: 'PATCH',
             body: data,
         }
@@ -45,7 +45,7 @@ export const serverApi = createApi({
     //User Slice 
     createUser: builder.mutation({
       query: (data) => ({
-        url: `/users`,
+        url: `/api/v1/users`,
         method: 'POST',
         body: data
       }),
@@ -53,26 +53,26 @@ export const serverApi = createApi({
     }),
     logedUser: builder.mutation({
       query: (data) => ({
-        url: `/users/login`,
+        url: `/api/v1/users/login`,
         method: 'POST',
         body: data
       }),
       invalidatesTags: ['User']
     }),
     getAllUsers: builder.query({
-      query: () => `/users`,
+      query: () => `/api/v1/users`,
       providesTags: ['Properties'],
     }),
     
     
   //Blog Slice
     getBlogs: builder.query({
-      query: () => `/blogs`,
+      query: () => `/api/v1/blogs`,
       providesTags: ['Blog'],
     }),
     createBlog: builder.mutation({
       query: (data) => ({
-        url: `/add-blog`,
+        url: `/api/v1/add-blog`,
         method: 'POST',
         body: data
       }),

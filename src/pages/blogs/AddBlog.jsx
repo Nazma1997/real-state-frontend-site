@@ -54,7 +54,7 @@ const AddBlog = () => {
       const image = imgbbResponse.data.data.url;
 
 
-      await axios.post(`${BASE_URL}/blogs`, {
+      await axios.post(`${BASE_URL}/api/v1/blogs`, {
         ...formData,
         image
       });

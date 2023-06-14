@@ -64,7 +64,7 @@ const AddProperty = () => {
       const image = imgbbResponse.data.data.url;
 
 
-      await axios.post(`${BASE_URL}/properties`, {
+      await axios.post(`${BASE_URL}/api/v1/properties`, {
         ...formData,
         image
       });

@@ -10,6 +10,8 @@ import { useNavigate } from 'react-router-dom';
 import { useGetAllUsersQuery } from '../../redux/apiSlice';
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 
+console.log( BASE_URL)
+
 
 const AddBlog = () => {
   const { data: getAllUsers } = useGetAllUsersQuery();

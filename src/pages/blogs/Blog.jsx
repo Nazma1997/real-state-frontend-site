@@ -20,7 +20,17 @@ const Blog = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
 
+  const createdAt = allLatestProperties?.map(item => item.date);
+  const dateObj = new Date(createdAt);
+  
 
+
+
+  const day = dateObj.getDate();
+  const month = dateObj.getMonth() + 1; // Months are zero-based, so add 1
+  const year = dateObj.getFullYear();
+
+  const formattedDate = `${month}/${day}/${year}`;
 
   const handleSearch = (event) => {
     const value = event.target.value;
@@ -84,7 +94,7 @@ const Blog = () => {
                       <img src={test} alt='the' className='rounded-t-2xl transform transition-transform hover:scale-105' />
                       <div className='mx-5 shadow-slate-700	'>
                         <h1 className='text-xl font-semibold my-5 mx-2 hover:text-sky-500'>{item?.title}</h1>
-                        <p className='mx-2 '>{item.date}</p>
+                      
                         <p className='mx-2'>{item?.text.slice(0, 90)}.</p>
                         <p className='mx-2 text-sky-500 '>Read More</p>
                       </div>
@@ -98,7 +108,6 @@ const Blog = () => {
                       <img src={test} alt='the' className='rounded-t-2xl transform transition-transform hover:scale-105' />
                       <div className='mx-5 shadow-slate-700	'>
                         <h1 className='text-xl font-semibold my-5 mx-2 hover:text-sky-500'>{item?.title}</h1>
-                        <p className='mx-2 '>{item.date}</p>
                         <p className='mx-2'>{item?.text.slice(0, 90)}.</p>
                         <p className='mx-2 text-sky-500 '>Read More</p>
                       </div>

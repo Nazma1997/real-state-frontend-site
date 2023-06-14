@@ -31,7 +31,7 @@ const BlogDetails = () => {
             </div>
           </div>
 
-          <BlogLeftSide />
+          {/* <BlogLeftSide /> */}
         </div>
 
      <Footer />

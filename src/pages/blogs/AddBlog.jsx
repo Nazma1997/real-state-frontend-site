@@ -60,7 +60,7 @@ const AddBlog = () => {
       });
 
       toast.success('Blog Added Successfully');
-      navigate('/')
+      navigate('/blogs')
       setFormData({
         title: '',
         category: '',
